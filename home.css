@@ -141,13 +141,14 @@ div.text_on_right{
 
 img.body_images {
     /* width: min(300px, 45vw); */
-    width: 350  px;
+    width: 350px;
     height: auto;
     border-radius: 5%;
     min-width: 40%;
     min-height: 40%;
     padding: 1%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
 }
 
 div.image_body {
