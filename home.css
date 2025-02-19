@@ -1,0 +1,240 @@
+body {
+    /* background-image: url(background/background_day.jpg); */
+    /* background-color: grey; */
+    font-family: 'Roboto', sans-serif;  
+    margin: auto;
+    /* max-height: 1440px; */
+}
+
+/*global variables*/
+:root{
+    --titletextsize: 6vw;
+    --cardtextsize: 3.2vw;
+
+    --step--2: clamp(0.6944rem, 0.4908rem + 1.0184vw, 1.28rem);
+    --step--1: clamp(0.8333rem, 0.5667rem + 1.3333vw, 1.6rem);
+    --step-0: clamp(1rem, 0.6522rem + 1.7391vw, 2rem);
+    --step-1: clamp(1.2rem, 0.7478rem + 2.2609vw, 2.5rem);
+    --step-2: clamp(1.44rem, 0.8539rem + 2.9304vw, 3.125rem);
+    --step-3: clamp(1.728rem, 0.9703rem + 3.7883vw, 3.9063rem);
+    --step-4: clamp(2.0736rem, 1.0965rem + 4.8856vw, 4.8828rem);
+    --step-5: clamp(2.4883rem, 1.2309rem + 6.2873vw, 6.1035rem);
+}
+
+nav{
+    height: 48px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: white;
+    opacity: 0.9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-items{
+    display: flex;
+}
+
+nav a {
+    text-decoration: none;
+    color: grey;
+    height: inherit;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+  }
+
+
+nav logo {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 24px;
+    padding-left: 12px;
+}
+
+nav a.active {
+    font-weight: bold;
+    color: rgb(100, 100, 100);
+}  
+ 
+
+nav a:hover {
+    background-color: #8ab8e9;
+    transition: 0.3s;
+}
+
+.div_me {
+    display:flex;
+    padding-top: 150px;
+    padding-bottom: 80px;
+    padding-inline: 5%;
+    justify-content:center;
+    background-color: rgb(154, 200, 224); 
+    
+}
+
+.div_me img {
+    margin-right: 10%;
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    min-width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.title_me {
+    margin-block: auto;
+    color:white;
+    font-size: var(--step-3); 
+    
+    min-width: 150px;
+    /* min(40pt, var(--titletextsize)); */
+}
+
+/* -----vvvv BODY vvvv----- */
+
+.title_home {
+    margin-top: 100px;
+    text-align: center;
+    color:#1b4571;
+    font-size: var(--step-2);
+    font-weight: 500;
+}
+
+
+div.cardviewTan{
+    display: flex;
+    align-items: center;
+    padding-inline: 10%;
+    padding-block: 5%;
+    background-color: #E4DEDC; /*Tan*/
+    min-width: 350px;
+}
+
+div.cardviewWhite{
+    display: flex;
+    align-items: center;
+    padding-inline: 10%;
+    padding-block: 5%;
+    background-color: white;
+    min-width: 350px;
+}
+
+/*text on right - image on left*/
+div.text_on_left{
+    margin-left: 5%;
+    font-size: var(--step--1);
+    text-align: center;
+}
+
+/*text on left - image on right*/
+div.text_on_right{
+    margin-right: 5%;
+    font-size: var(--step--1); 
+    text-align: center;
+}
+
+img.body_images {
+    /* width: min(300px, 45vw); */
+    width: 350  px;
+    height: auto;
+    border-radius: 5%;
+    min-width: 40%;
+    min-height: 40%;
+    padding: 1%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+div.image_body {
+    margin-inline: 5%;
+}
+
+.image_body :hover{
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.footer{
+    background-color: #1b4571;
+    color: white;
+    text-align: center;
+    padding: 20px 0px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    height: 200px;
+}
+
+.footer_content{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20%;
+}
+
+.copyright{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    font-size: 16px;
+    transform: translateX(-50%);
+}
+
+@media screen and (max-width: 600px) {
+
+    .title_me {
+        font-size: var(--step-4); 
+        font-weight: 500;
+    }
+
+    .div_me{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .div_me img {
+        margin-right: 0%;
+        max-width: 400px;
+    }
+
+
+    div.cardviewTan{
+        flex-direction: column;
+        padding: 10%;
+    }
+    
+    div.cardviewWhite{
+        flex-direction: column-reverse; /* image on top, text on bottom */
+        padding: 10%;
+    }
+
+    img.body_images {
+        width: 100%;
+        height: auto;
+        padding-inline: 1%;
+        border-radius: 5%;
+    }
+
+    div.text_on_right{
+        margin-inline: 5%;
+        font-size: 20px;
+    }
+
+    div.text_on_left{
+        margin-inline: 5%; 
+        font-size: 20px;
+    }
+
+    .footer{
+        height: 300px;
+    }
+
+    .footer_content{
+        flex-direction: column;
+    }
+    
+}
