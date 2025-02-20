@@ -3,7 +3,6 @@ body {
     /* background-color: grey; */
     font-family: 'Roboto', sans-serif;  
     margin: auto;
-    width: 100vw;
     /* max-height: 1440px; */
 }
 
@@ -24,7 +23,7 @@ body {
 
 nav{
     height: 48px;
-    width: 100%;
+    width: 100vw;
     position: fixed;
     top: 0px;
     left: 0px;
