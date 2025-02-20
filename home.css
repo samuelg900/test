@@ -3,6 +3,7 @@ body {
     /* background-color: grey; */
     font-family: 'Roboto', sans-serif;  
     margin: auto;
+    width: 100vw;
     /* max-height: 1440px; */
 }
 
