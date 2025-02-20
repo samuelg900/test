@@ -74,7 +74,7 @@ nav a:hover {
     padding-inline: 5%;
     justify-content:center;
     background-color: rgb(154, 200, 224); 
-    
+    width: 100vw;
 }
 
 .div_me img {
