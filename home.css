@@ -48,6 +48,7 @@ nav a {
 
 
 nav logo {
+    margin-left: 6px;
     font-weight: bold;
     font-style: italic;
     font-size: 24px;
@@ -129,7 +130,7 @@ div.text_on_right{
     text-align: center;
 }
 
-img.body_images {
+img.image {
     width: min(400px, 40vw);
     height: auto;
     border-radius: 5%;
@@ -137,18 +138,13 @@ img.body_images {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-img.body_images:active{
+img.image:active {
     transform: rotate(360deg);
-    transition: 0.3s;
-}
+    transition: 0.7s;
+} 
 
-div.image_body {
+.div_image {
     margin-inline: 5%;
-}
-
-.image_body :hover{
-    opacity: 0.7;
-    transition: 0.3s;
 }
 
 .footer{
@@ -203,7 +199,7 @@ div.image_body {
         padding: 10%;
     }
 
-    img.body_images {
+    img.image {
         width: 100%;
         padding-inline: 1%;
         border-radius: 5%;
