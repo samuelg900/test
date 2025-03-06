@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "piece_name": "Alicia Keys",
+      "piece_description": "This is my most recent art piece. It's a painting of Alicia Keys (unfinished). Fun fact: My printer bugged out and created a peach-like color for part of the background and I thought it was pretty cool so I kept it"
+    },
+    {
+      "id": 2,
+      "piece_name": "Apple",
+      "piece_description": "My first attempt at a watercolor painting, in which I just used watered down tempera paint. For a while I had it framed and ironically hanging up in my room as if it was actually worth something"
+    },
+    {
+      "id": 3,
+      "piece_name": "Charcoal Me",
+      "piece_description": "A charcoal drawing of me. It was featured in the invitation for the Winter art exhibit at my first college in 2018"
+    },
+    {
+      "id": 4,
+      "piece_name": "Skull",
+      "piece_description": "A simple bones still life piece in color pastels. Did this one in highschool"
+    },
+    {
+      "id": 5,
+      "piece_name": "Titanic",
+      "piece_description": "The plan was to create a replica of the Titanic movie drawing. I was going to rip it up a bit and dye it in coffee but I chickened out because I didn't want to ruin it. I guess I could've (and still could) just make copies and do a few test runs"
+    },
+    {
+      "id": 6,
+      "piece_name": "Fish-Vase",
+      "piece_description": "Another highschool still life drawing. This one was done with regular graphite. I named it “fish-vase.” I know, I'm so creative, thanks"
+    },
+    {
+      "id": 7,
+      "piece_name": "Paper Bags On A Wall",
+      "piece_description": "Kind of an odd piece I think. Those bags and leaves were attached to a wall and our task was to pick an interesting spot and draw it in color pastels. I guess I achieved the task"
+    },
+    {
+      "id": 8,
+      "piece_name": "Vase And Bust Still Life",
+      "piece_description": "The vase makes another appearance! I'm not sure what I named this one but my guess is “vase-face”"
+    },
+    {
+      "id": 9,
+      "piece_name": "Stippling",
+      "piece_description": "This was the first time I did stippling and I used sharpies. There's something I still want to try to fix but I wont get into that now (left side of bowling pin). Other than that, I think it looks pretty decent"
+    }
+]
+  
