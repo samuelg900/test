@@ -30,6 +30,7 @@ nav{
     left: 0px;
     background: white;
     opacity: 0.9;
+    z-index: 100;
 }
 
 .nav-items{
@@ -48,11 +49,10 @@ nav a {
 
 
 nav logo {
-    margin-left: 6px;
+    margin-left: 20px;
     font-weight: bold;
     font-style: italic;
-    font-size: 24px;
-    padding-left: 12px;
+    font-size: 26px;
 }
 
 nav a.active {
@@ -76,9 +76,11 @@ nav a:hover {
 }
 
 .div_me img {
-    width: 400px;
+    width: 380px;
     border-radius: 50%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    /* transform: rotateZ(360deg);
+    transition: 1.5s; */
 }
 
 .title_me {
@@ -88,8 +90,6 @@ nav a:hover {
     font-size: var(--step-3); 
     margin-left: 5%;
 }
-
-/* -----vvvv BODY vvvv----- */
 
 .title_home {
     margin-top: 80px;
@@ -103,6 +103,7 @@ nav a:hover {
 .cardviewTan{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-inline: 10%;
     padding-block: 5%;
     background-color: #E4DEDC; /*Tan*/
@@ -111,6 +112,7 @@ nav a:hover {
 .cardviewWhite{
     display: flex;
     align-items: center;
+    justify-content: center;
     padding-inline: 10%;
     padding-block: 5%;
     background-color: white;
@@ -118,30 +120,36 @@ nav a:hover {
 
 /*text on right - image on left*/
 div.text_on_left{
-    margin-left: 5%;
+    /* margin-right: 5%; */
     font-size: var(--step-0);
     text-align: center;
 }
 
 /*text on left - image on right*/
 div.text_on_right{
-    margin-right: 5%;
+    /* margin-right: 5%; */
     font-size: var(--step-0); 
     text-align: center;
 }
 
 img.image {
-    width: min(400px, 40vw);
+    width: min(350px, 40vw);
     height: auto;
     border-radius: 5%;
     padding: 1%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
-img.image:active {
+img.image:hover {
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+/* img.image:active {
     transform: rotate(360deg);
     transition: 0.7s;
-} 
+}  */
+
 
 .div_image {
     margin-inline: 5%;
@@ -171,7 +179,22 @@ img.image:active {
     transform: translateX(-50%);
 }
 
-@media screen and (max-width: 600px) {
+.footer_image{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: auto;
+    margin-bottom: 20px;
+    margin-right: 25px;
+    animation: spinner 8s linear infinite; 
+  }
+  @keyframes spinner {
+    to { transform: rotate(360deg); }
+  }
+
+/* Mobile view */
+@media(max-width: 600px) {
 
     .title_me {
         font-size: var(--step-4); 
@@ -188,13 +211,12 @@ img.image:active {
         margin-right: 0%;
     }
 
-
-    div.cardviewTan{
+    .cardviewTan{
         flex-direction: column;
         padding: 10%;
     }
     
-    div.cardviewWhite{
+    .cardviewWhite{
         flex-direction: column-reverse; /* image on top, text on bottom */
         padding: 10%;
     }
@@ -205,12 +227,12 @@ img.image:active {
         border-radius: 5%;
     }
 
-    div.text_on_right{
+    .text_on_right{
         margin-inline: 5%;
         font-size: var(--step-1);
     }
 
-    div.text_on_left{
+    .text_on_left{
         margin-inline: 5%; 
         font-size: var(--step-1);
     }
