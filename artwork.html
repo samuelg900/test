@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="artwork.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+<title>Artwork</title>
+</head>
+<body>
+    <!-- Top nav -->
+    <nav> 
+        <logo>LSM</logo>
+        <div class="nav-items">
+        <a href="home.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a class="active" href="artwork.html">Art</a>
+        <a href="about.html">About</a>
+    </div>
+</nav>
+
+<h1 class="title">My Artwork</h1>
+
+<!-- viewport that holds currently selected image -->
+<div class="pic_viewport">
+    <img class="image_div" id="imageID" src="art_images/1.jpg" alt="placeholder" >
+    <div class="image_text">
+        <p id="text_id"></p>
+    </div>
+    
+</div>
+
+<!-- list of images that can be clicked to change the image in the viewport -->
+<div class="pic_list">
+    <script>
+            let newImage;
+            for (let i = 1; i < 10; i++) {
+                newImage = document.createElement('img');
+                newImage.setAttribute('src', 'art_images/' + i + '.jpg');
+                newImage.setAttribute('class', 'image');
+                newImage.setAttribute('onclick', 'changeImage("art_images/' + i + '.jpg", ' + i + ')');
+                document.querySelector('.pic_list').appendChild(newImage);
+            }
+    </script>
+</div>
+
+<!-- mobile version of the page -->
+<div class="mobile_pic_list">
+
+    <script>
+        // Fetches the JSON file and creates the image and description elements
+        function jsonFunc(data, jsonIsGood) {
+
+            let desc;
+            let art_pic;
+            let imageContainer;
+            let p;
+
+            for (let i = 1; i < 10; i++) {
+                
+            // Create the div element for back side (description)
+            desc = document.createElement('div');
+            desc.setAttribute('class', 'overlay');
+            desc.setAttribute('id', 'overlayId'+i);
+
+            p = document.createElement('p');
+
+            if(jsonIsGood){
+                p.innerHTML = data[i - 1].piece_description;
+                artDetails(data[i - 1].piece_description);
+            }
+            else
+                p.innerHTML = "There was an issue retrieving the JSON file image data";
+
+            desc.appendChild(p);
+    
+            // Create the img element for the front side (image)
+            art_pic = document.createElement('img');
+            art_pic.setAttribute('src', 'art_images/' + i + '.jpg');
+            art_pic.setAttribute('class', 'image_mobile');
+            art_pic.setAttribute('id', 'imageId'+i);
+    
+            // Create the div element for the image container
+            imageContainer = document.createElement('div');
+            imageContainer.setAttribute('class', 'imageContainer');
+            imageContainer.setAttribute('onclick', 'changeOpacity("'+i+'")');
+            imageContainer.appendChild(desc);
+            imageContainer.appendChild(art_pic);
+    
+            document.querySelector('.mobile_pic_list').appendChild(imageContainer);
+            }
+        }
+        
+        fetch('json/artwork.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+          
+          return response.json();
+        })
+        .then(data => {
+            jsonFunc(data, true);
+
+            //sets up the first image description for the viewport
+            changeImage('art_images/1.jpg', 1);
+
+        })
+        .catch(error => {
+            //console.error('There was a problem with the fetch operation:', error);
+            jsonFunc(null, false);
+        })
+    
+    </script>
+</div>
+
+<div class="footer">
+    <div class="footer_content">
+        <p title="Does nothing - just for show">Privacy</p>
+        <p title="Does nothing - just for show">Terms</p>
+        <p title="Does nothing - just for show">Feedback</p>
+        <p title="Does nothing - just for show">Careers</p>    
+    </div>
+    <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
+</div>
+
+<script>
+
+    //holds the descriptions of the artwork
+    const artDes = [];
+
+    //switches the opacity of the image and overlay
+    function changeOpacity(num) {
+        var img = document.getElementById('imageId'+num);
+        var overlay = document.getElementById('overlayId'+num);
+
+        const style = window.getComputedStyle(img);
+        const opacity = style.getPropertyValue('opacity');
+
+        if(opacity == 0) {
+            img.style.opacity = 1;
+            overlay.style.opacity = 0;
+        }
+        else {
+            img.style.opacity = 0;
+            overlay.style.opacity = 1;
+        }
+    }
+
+    //changes the image and description in viewport
+    function changeImage(imageSrc, num) {
+        document.getElementById('imageID').src = imageSrc;
+        document.getElementById('text_id').innerHTML = artDes[parseInt(num) - 1];
+    }
+
+    //adds the description of artwork to array
+    function artDetails(desc){
+        artDes.push(desc);
+    }
+</script>
+
+
+</body>
+</html>
