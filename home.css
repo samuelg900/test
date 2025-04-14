@@ -24,10 +24,13 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 48px;
-    width: 100%;
+    /* width: 100%; */
+    min-width: 375px;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    border-radius: 5px;
     background: white;
     opacity: 0.9;
     z-index: 100;
@@ -37,14 +40,14 @@ nav{
     display: flex;
 }
 
-nav a {
+nav a,b {
     text-decoration: none;
-    color: grey;
+    color: dimgray;
     height: inherit;
-    padding: 14px 16px;
+    padding: 20px 14px;
     display: flex;
     align-items: center;
-    font-size: 17px;
+    font-size: 14px;
   }
 
 
@@ -55,38 +58,112 @@ nav logo {
     font-size: 26px;
 }
 
+nav logo:hover{
+    animation: colors 3s linear;
+}
+
+.nav-dropdown{
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    opacity: 0.9;
+    float: right;
+    min-width: 120px;
+    border-radius: 5px;
+    animation: expand 0.3s; 
+  }
+  @keyframes expand {
+    0%{height: 0px;}
+    100%{height: 150px;}
+  }
+
+
+.nav-dropdown a{
+    text-decoration: none;
+    color: dimgray;
+    font-size: 14px;
+    padding: 10px 16px;
+    display: block;
+    animation: opac 1.0s;
+}
+
+@keyframes opac {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+
+.nav-dropdown a:hover {
+    background-color: #8ab8e9;
+    transition: 0.3s;
+}
+
+
+@keyframes colors {
+    0%   {color: red;}
+    25%  {color: orange;}
+    50%  {color: yellow;}
+    75%  {color: green;}
+    100% {color: blue;}
+}
+
 nav a.active {
-    font-weight: bold;
-    color: rgb(100, 100, 100);
+    font-weight: 500;
+    color: rgb(72, 133, 209);
 }  
  
-
 nav a:hover {
     background-color: #8ab8e9;
     transition: 0.3s;
 }
 
+.material-symbols-outlined {
+    display: none;    
+}
+
+.backcover {
+    max-height: 500px;
+    overflow: hidden;
+}
+.backcover img{
+    width: 100%;
+}
+
 .div_me {
     display:flex; 
     justify-content:center;
-    padding-top: 150px;
-    padding-bottom: 80px;
-    padding-inline: 10%;
-    background-color: rgb(154, 200, 224); /* light blue */    
+    padding-inline: 5%;
+}
+
+.title_text{
+    width: 30%;
+    margin-top: -15px;     
+    text-align: center;
+    font-size: var(--step--2);
+    font-weight: 500;
+    font-style: italic;
+    color: #565b61;
 }
 
 .div_me img {
-    width: 380px;
+    /* position: absolute; */
+    width: min(350px, 40vw); 
+    height: min(350px, 40vw);
     border-radius: 50%;
+    border: 5px solid white;
+    margin-top: -180px;  
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    /* transform: rotateZ(360deg);
-    transition: 1.5s; */
+    margin-inline: 5%; 
+    justify-self: center;
 }
 
 .title_me {
     text-align: center;
-    margin-block: auto;
+    margin-top: -180px;
+    height: inherit;
     color:white;
+    text-shadow: 2px 2px 4px #000000;
     font-size: var(--step-3); 
     margin-left: 5%;
 }
@@ -95,10 +172,8 @@ nav a:hover {
     margin-top: 80px;
     text-align: center;
     color:#1b4571;
-    font-size: var(--step-3);
-    font-weight: 500;
+    font-size: var(--step-2);
 }
-
 
 .cardviewTan{
     display: flex;
@@ -106,7 +181,6 @@ nav a:hover {
     justify-content: center;
     padding-inline: 10%;
     padding-block: 5%;
-    background-color: #E4DEDC; /*Tan*/
 }
 
 .cardviewWhite{
@@ -115,18 +189,18 @@ nav a:hover {
     justify-content: center;
     padding-inline: 10%;
     padding-block: 5%;
-    background-color: white;
+    background-color: #E4DEDC; /*Tan*/
 }
 
 /*text on right - image on left*/
-div.text_on_left{
+.text_on_left{
     /* margin-right: 5%; */
     font-size: var(--step-0);
     text-align: center;
 }
 
 /*text on left - image on right*/
-div.text_on_right{
+.text_on_right{
     /* margin-right: 5%; */
     font-size: var(--step-0); 
     text-align: center;
@@ -136,20 +210,9 @@ img.image {
     width: min(350px, 40vw);
     height: auto;
     border-radius: 5%;
-    padding: 1%;
+    /* padding: 1%; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-
-img.image:hover {
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-/* img.image:active {
-    transform: rotate(360deg);
-    transition: 0.7s;
-}  */
-
 
 .div_image {
     margin-inline: 5%;
@@ -157,7 +220,8 @@ img.image:hover {
 
 .footer{
     height: 200px;
-    background-color: #1b4571;
+    background-color: #a99e81;
+    /* background-color: #1b4571; */
     color: white;
     text-align: center;
     padding: 20px 0px;
@@ -196,19 +260,44 @@ img.image:hover {
 /* Mobile view */
 @media(max-width: 600px) {
 
+    .title_text{
+        display: none;
+    }
+
+    .nav-items a{
+        display: none;
+    }
+
+    .material-symbols-outlined {
+        font-size: 36px;
+        display: block;
+        padding-right: 15px;
+    }
+    .material-symbols-outlined:hover {
+        color: #8ab8e9;
+        cursor: pointer
+    }
+    
     .title_me {
         font-size: var(--step-4); 
         font-weight: 500;
+        margin: 0;
+    }
+    .title_me p{
+        text-align: center;
     }
 
     .div_me{
         flex-direction: column;
         align-items: center;
+        padding-inline: 0;
     }
     
     .div_me img {
-        width: 300px;
-        margin-right: 0%;
+        width: 260px;
+        height: 260px; /* Adjusted for mobile view */
+        margin-inline: 0%;
+        margin-top: -125px; /* Adjusted for mobile view */
     }
 
     .cardviewTan{
@@ -227,15 +316,22 @@ img.image:hover {
         border-radius: 5%;
     }
 
-    .text_on_right{
+    /* .text_on_right{
         margin-inline: 5%;
-        font-size: var(--step-1);
     }
-
+    
     .text_on_left{
         margin-inline: 5%; 
+    } */
+
+    .text_on_right p{
         font-size: var(--step-1);
     }
+    
+    .text_on_left p{
+        font-size: var(--step-1);
+    }
+    
 
     .footer{
         height: 300px;
@@ -244,5 +340,5 @@ img.image:hover {
     .footer_content{
         flex-direction: column;
     }
-    
+
 }
