@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 <link rel="stylesheet" href="home.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,22 +14,81 @@
 
 <nav> 
     <logo>LSM</logo>
-    <div class="nav-items">
-    <a class="active" href="home.html">Home</a>
-    <a href="skills.html">Skills</a>
-    <a href="artwork.html">Art</a>
-    <a href="about.html">About</a>
+    <div class="nav-items" id="navItems">
+    <a class="active" href="home.html">HOME</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="artwork.html">ART</a>
+    <a href="about.html">ABOUT</a>
+    <!-- <b class="hamburger" onclick="toggleMenu()">&#9776;</b> -->
+     
+    <!-- <b class="hamburger" onclick="toggleMenu()">&#9776;</b> -->
+    <!-- <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">
+        menu
+        </span> -->
+        <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+    
+    
+    
     </div>
 </nav>
-
-<div class="div_me">
-    <img src="home_images/mypic.jpeg" alt="Me" >
-    <div class="title_me">
-        <p>Computer Scientist</p>
-    </div>
+<div id="dropdownID" class="nav-dropdown">
+    <!-- <p> -->
+    <a href="home.html">HOME</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="artwork.html">ART</a>
+    <a href="about.html">ABOUT</a>
+    <!-- </p> -->
 </div>
 
-<p class="title_home">My Life Experience</p>
+
+<script>
+
+    
+    function toggleMenu() {
+    let menu = document.getElementById("dropdownID");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+  
+    }
+    
+//makes the dropdown menu disappear when screen resizes
+window.addEventListener('resize', () => {
+    if(document.getElementById("dropdownID").style.display==='block')
+        document.getElementById("dropdownID").style.display = 'none';
+});
+
+window.addEventListener('scroll', () => {
+    if(document.getElementById("dropdownID").style.display==='block')
+        document.getElementById("dropdownID").style.display = 'none';
+});
+
+
+</script>
+
+<div class="backcover">
+     <img src="home_images/home_background.jpg"> 
+</div>
+
+    <div class="div_me">
+        <div class="title_text">
+        <p>University of New Hampshire '24</p>
+
+        </div>
+        <img src="home_images/mypic.jpeg" alt="Me" >
+        
+        
+        <div class="title_text">
+        <p>Computer Scientist</p>
+        </div>
+        <!-- <div class="title_me">
+            <p>Computer Scientist</p>
+        </div> -->
+    </div>
+
+<p class="title_home">What's my story?</p>
 
 <div class="cardviewWhite">
     <div class="text_on_left">
