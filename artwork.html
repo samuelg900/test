@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="artwork.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,18 +12,51 @@
 <title>Artwork</title>
 </head>
 <body>
-    <!-- Top nav -->
     <nav> 
         <logo>LSM</logo>
         <div class="nav-items">
-        <a href="home.html">Home</a>
-        <a href="skills.html">Skills</a>
-        <a class="active" href="artwork.html">Art</a>
-        <a href="about.html">About</a>
+            <a href="home.html">HOME</a>
+            <a href="skills.html">SKILLS</a>
+        <a class="active" href="artwork.html">ART</a>
+        <a href="about.html">ABOUT</a>  
+        
+        <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+    
     </div>
 </nav>
 
-<h1 class="title">My Artwork</h1>
+<div id="dropdownID" class="nav-dropdown">
+    <a href="home.html">HOME</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="artwork.html">ART</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<script>    
+    function toggleMenu() {
+    let menu = document.getElementById("dropdownID");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+  
+    }
+    
+//makes the dropdown menu disappear when screen resizes
+window.addEventListener('resize', () => {
+    if(document.getElementById("dropdownID").style.display==='block')
+        document.getElementById("dropdownID").style.display = 'none';
+});
+
+window.addEventListener('scroll', () => {
+    if(document.getElementById("dropdownID").style.display==='block')
+        document.getElementById("dropdownID").style.display = 'none';
+});
+
+</script>
+
+<!-- <h1 class="title">My Artwork</h1> -->
 
 <!-- viewport that holds currently selected image -->
 <div class="pic_viewport">
