@@ -6,6 +6,7 @@ body {
   min-width: 400px;
 }
 
+
 /*global variables*/
 :root{
   --step--2: clamp(0.6944rem, 0.4908rem + 1.0184vw, 1.28rem);
