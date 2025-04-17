@@ -23,11 +23,14 @@ nav{
   justify-content: space-between;
   align-items: center;
   height: 48px;
-  width: 100%;
+  min-width: 375px;
   position: fixed;
-  top: 0px;
-  left: 0px;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  border-radius: 5px;
   background-color: rgb(15, 15, 15);
+  opacity: 0.9;
   z-index: 100;
 }
 
@@ -39,50 +42,78 @@ nav a {
   text-decoration: none;
   color: grey;
   height: inherit;
-  padding: 14px 16px;
+  padding: 20px 14px;
   display: flex;
   align-items: center;
-  font-size: 17px;
-}
-
-
-nav logo {
-  margin-left: 20px;
-  font-weight: bold;
-  font-style: italic;
-  font-size: 26px;
-  color: white;
+  font-size: 14px;
 }
 
 nav a.active {
-  font-weight: bold;
+  font-weight: 500;
   color: rgb(170, 170, 170);
 }  
-
 
 nav a:hover {
   background-color: #ffffff;
   transition: 0.3s;
 }
 
+nav logo {
+  margin-left: 10px;
+  font-weight: bold;
+  font-style: italic;
+  font-size: 26px;
+  color: white;
+}
+
+.nav-dropdown{
+  display: none;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  background-color: grey;
+  opacity: 0.9;
+  float: right;
+  min-width: 120px;
+  border-radius: 5px;
+  animation: expand 0.3s; 
+  z-index: 99;
+}
+@keyframes expand {
+  0%{height: 0px;}
+  100%{height: 150px;}
+}
+
+.nav-dropdown a{
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+  padding: 10px 16px;
+  display: block;
+  animation: opac 1.0s;
+}
+
+@keyframes opac {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+.nav-dropdown a:hover {
+  background-color: #8ab8e9;
+  transition: 0.3s;
+}
+
+.material-symbols-outlined {
+  display: none;    
+}
 
 /* -------------- */
-
-.title {
-  display: flex;
-  justify-content: center;
-  margin-top: 120px;
-  margin-bottom: 72px;
-  color: white;
-  font-size: 34px;
-}
 
 .pic_viewport{
   display: flex;
   justify-content:space-evenly;
-  max-height: 600px;
   width: 100%;
-  height: 550px;
+  height: 750px;
   background-color: black;
 }
 
@@ -90,14 +121,15 @@ nav a:hover {
   display: flex;
   align-self: center;
   max-width: 600px;
-  min-width: 200px;
+  min-width: 200px;;
 }
 
 .image_text p{
-  font-size: 28px;
+  font-size: var(--step-1);
   color: white;
   text-align: center;
   margin-inline: 20px;
+  margin-bottom: 20px;
 }
 
 .pic_list{
@@ -129,14 +161,15 @@ nav a:hover {
     }
     
   .footer{
+    position: relative;
     height: 200px;
-    background-color: #1b4571;
+    bottom: 0;
+    left: 0;
+    padding: 20px 0px;
+    margin-top: 100px;
+    background-color: #122f4d;
     color: white;
     text-align: center;
-    padding: 20px 0px;
-    position: relative;
-    bottom: 0px;
-    margin-top: 100px;
 }
 
 .footer_content{
@@ -154,17 +187,21 @@ nav a:hover {
 }
 
 /* Tablet-ish view */
-  @media (max-width: 1100px){
+  @media (max-width: 2100px){
+
 
     .pic_viewport{
+      margin-top: 80px;
       flex-direction: column;
       height: fit-content;
+      width: 100%;
     } 
 
     .image_div{
-      width: auto;
-      height: 400px;
+      max-height: 450px; 
+      max-width: 90%;
       align-self: center;
+      margin-top: 10px;
     }
 
     .image_text{
@@ -173,15 +210,27 @@ nav a:hover {
 
     .image_text p{
       justify-self: center;
-      font-size: 26px;
-    /* font-size: var(--step-0);  */
+      /* font-size: 26px; */
+    font-size: var(--step-0); 
       margin-inline: 5%;
     }
 
   }
 
   /* Mobile view */
-@media (max-width: 650px) {
+@media (max-width: 600px) {
+
+  .nav-items a{
+    display: none;
+}
+
+  .material-symbols-outlined {
+    font-size: 36px;
+    display: block;
+    margin-right: 10px;
+    cursor: pointer;
+    color: white;
+}
   
   .pic_viewport{
     width: auto;
