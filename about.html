@@ -139,7 +139,13 @@
           overlay_.appendChild(p);
 
           newImage = document.createElement('img');
+
+          //---------TODO: remove/fix later
           newImage.setAttribute('src', 'art_images/' + i + '.jpg');
+          if(i === 9)
+            newImage.setAttribute('src', 'art_images/_' + i + '.jpg');
+          //----------
+          
           newImage.setAttribute('class', 'image_mobile');
           newImage.setAttribute('id', 'imageId' + i);
 
