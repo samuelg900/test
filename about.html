@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link rel="stylesheet" href="about.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <title>About</title>
+</head>
+
+<body>
+
+  <nav>
+    <logo>LSM</logo>
+    <div class="nav-items">
+      <a href="home.html">HOME</a>
+      <a href="skills.html">SKILLS</a>
+      <a href="artwork.html">ART</a>
+      <a class="active" href="about.html">ABOUT</a>
+      <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+    </div>
+  </nav>
+
+  <div id="dropdownID" class="nav-dropdown">
+    <a href="home.html">HOME</a>
+    <a href="skills.html">SKILLS</a>
+    <a href="artwork.html">ART</a>
+    <a href="about.html">ABOUT</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      let menu = document.getElementById("dropdownID");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+
+    }
+
+    //makes the dropdown menu disappear when screen resizes
+    window.addEventListener('resize', () => {
+      if (document.getElementById("dropdownID").style.display === 'block')
+        document.getElementById("dropdownID").style.display = 'none';
+    });
+
+    window.addEventListener('scroll', () => {
+      if (document.getElementById("dropdownID").style.display === 'block')
+        document.getElementById("dropdownID").style.display = 'none';
+    });
+
+  </script>
+
+  <script>
+    const artDes = [];
+    //switches the opacity of the image and overlay
+    function changeOpacity(num) {
+      let img = document.getElementById('imageId' + num);
+      let overlay = document.getElementById('overlayId' + num);
+
+      const style = window.getComputedStyle(img);
+      const opacity = style.getPropertyValue('opacity');
+
+      if (opacity == 0) {
+        img.style.opacity = 1;
+        overlay.style.opacity = 0;
+      }
+      else {
+        img.style.opacity = 0;
+        overlay.style.opacity = 1;
+      }
+    }
+
+    //adds the description of artwork to array
+    function artDetails(desc) {
+      artDes.push(desc);
+    }
+
+    function func_active(element, i) {
+
+      // Get the currently active image
+      const activeImage = document.querySelector('.slider-img.active');
+
+      if (activeImage === element) {
+        changeOpacity(i);
+        if (activeImage.querySelector('div').style.opacity == 1) {
+          activeImage.classList.add('back_class');
+        } else {
+          activeImage.classList.remove('back_class');
+        }
+
+      }// If there is an active image, remove the active class from it
+      else if (activeImage) {
+        console.log(activeImage);
+        activeImage.classList.remove('active');
+        activeImage.querySelector('div').style.opacity = 0;
+        activeImage.querySelector('img').style.opacity = 1;
+        element.classList.add('active');
+        activeImage.classList.remove('back_class');
+
+      }
+    }
+
+  </script>
+
+  <div class="pic_list">
+    <script>
+
+      function jsonFunc(data, jsonIsGood) {
+
+        let newImage;
+        let desc;
+        let overlay_;
+        let p;
+
+        for (let i = 1; i < 10; i++) {
+
+
+          overlay_ = document.createElement('div');
+          overlay_.setAttribute('class', 'overlay');
+          overlay_.setAttribute('id', 'overlayId' + i);
+
+          p = document.createElement('p');
+
+          if (jsonIsGood) {
+            p.innerHTML = data[i - 1].piece_description;
+            artDetails(data[i - 1].piece_description);
+          }
+          else
+            p.innerHTML = "There was an issue retrieving the JSON file image data";
+
+          overlay_.appendChild(p);
+
+          newImage = document.createElement('img');
+          newImage.setAttribute('src', 'art_images/_' + i + '.jpg');
+          newImage.setAttribute('class', 'image_mobile');
+          newImage.setAttribute('id', 'imageId' + i);
+
+
+          desc = document.createElement('div');
+          desc.setAttribute('class', 'slider-img');
+          if (i === 3) desc.classList.add('active');
+
+
+          desc.setAttribute('onclick', 'func_active(this, ' + i + ')');
+          desc.appendChild(overlay_);
+          desc.appendChild(newImage);
+
+          document.querySelector('.pic_list').appendChild(desc);
+        }
+      }
+
+      fetch('json/artwork.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+          }
+
+          return response.json();
+        })
+        .then(data => {
+          jsonFunc(data, true);
+        })
+        .catch(error => {
+          //console.error('There was a problem with the fetch operation:', error);
+          jsonFunc(null, false);
+        })
+
+    </script>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer_content">
+      <p title="Does nothing - just for show">Privacy</p>
+      <p title="Does nothing - just for show">Terms</p>
+      <p title="Does nothing - just for show">Feedback</p>
+      <p title="Does nothing - just for show">Careers</p>
+    </div>
+    <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
+  </div>
+
+</body>
+
+</html>
