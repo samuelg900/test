@@ -210,7 +210,6 @@ img.image {
     width: min(350px, 40vw);
     height: auto;
     border-radius: 5%;
-    /* padding: 1%; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -312,7 +311,6 @@ img.image {
 
     img.image {
         width: 100%;
-        padding-inline: 1%;
         border-radius: 5%;
     }
 
