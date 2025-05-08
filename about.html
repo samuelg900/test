@@ -4,12 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
-  <link rel="stylesheet" href="about.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-    rel="stylesheet">
+  <link rel="stylesheet" href="mainstylesheet.css">
+  <link rel="stylesheet" href="about.css">
 
   <title>About</title>
 </head>
@@ -140,9 +138,7 @@
 
           newImage = document.createElement('img');
           newImage.setAttribute('src', 'art_images/a' + i + '.jpg');
-          newImage.setAttribute('class', 'image_mobile');
           newImage.setAttribute('id', 'imageId' + i);
-
 
           desc = document.createElement('div');
           desc.setAttribute('class', 'slider-img');
@@ -177,6 +173,48 @@
 
   </div>
 
+  <div class="body_content">
+    <div class="body_container">
+      <p  class="body_title" >Art can be everywhere—on canvases, in alleys, on walls <br>Here are some of the artworks I've seen around the world.</p>
+    </div>
+
+      <div class="body_container">
+        <img class="body_pano" src="art_images/pano1.jpg" alt="Street art in Colombia" />
+      <p class="body_text">Presumably commissioned in 2014 by the University of Vermont in Burlington, VT, this painting tells a story that many seem to struggle with; that of finding one's voice. The artist <a class="links" href="https://www.instagram.com/sarahcrutherford" target="_blank">Sarah C. Rutherford</a>, says she personally feels connected with this story as it reminds her of her own experience at UVM while being a student advocate at the university.</p>
+    </div>
+      
+      <div class="body_container">
+        <div class="image_on_right">
+          <img src="art_images/image1.jpg" alt="">
+      </div>
+        <p class="body_text">Situated on Av. El Dorado in Bogotá, Colombia, we see a painting of an Afro-Colombian woman looking serene as she seems to glance down at the street below. Though this art piece is part of a series of paintings on a short stretch of road, it is unclear if the other artworks were also done by the same artist. Despite the surrounding artwork, this painting stands out for its simple yet impactful imagery.</p>
+        <p class="body_text">The artist, who goes by <a class="links" href="https://www.instagram.com/jotados_graffiti" target="_blank">Jotados Graffiti</a>, says the painting is a homage to the island of San Andres and its "magic." San Andres is an island of Colombia in the Caribbean Sea which was once primarily inhabited by a black colombian ethnic group called the Raizal. While the Raizal people's population is much lower than it once used to be, this painting still demonstrates that their cultural roots still remain deeply embedded in the island's identity. The painting may also serve as a tribute to the enduring presence of their Afro-Caribbean heritage and the resilience of a community that continues to preserve its traditions and way of life despite unchecked tourism and other ongoing challenges. </p>
+   </div>
+
+   <div class="body_container">   
+    
+    <div class="image_on_left">
+    <img src="art_images/image2.jpg" class="left_img" alt="">
+    </div>
+    
+    <p class="body_text">“The Kiss of the Invisibles” is the title of this artwork located in Bogotá, Colombia. It was created by <a class="links" href="https://www.instagram.com/vertigograffiti/" target="_blank">Vértigo Graffiti</a> alongside a couple fellow artists. This piece was inspired by the late Héctor Fabio Zamora's 2013 photograph “Beso del Bronx,” which captures a homeless couple embracing as they lie on the streets of the El Bronx neighborhood.</p>
+    <p class="body_text">El Bronx was a multi-crime infested neighborhood that the government of Colombia set out to dismantle in 2016. With a multitude of law enforcement officers, the neighborhood was raided and cleared out in a massive operation that exposed rampant drug trafficking, human trafficking, and extreme poverty. This action marked the beginning of an urban renewal project aimed at transforming the area into a cultural and creative hub.</p>
+    <p class="body_text">With all the chaos and violence, the couple was caught in the middle of it all portraying that although they were surrounded by suffering, love can not only exist but endure and prevail. Their embrace reminds us that, despite how often homeless individuals are dehumanized, they feel, love, and hope just like the rest of us.</p>
+
+
+   </div>
+
+   <div class="body_container">
+    <img class="body_pano" src="art_images/pano2.jpg" alt="Street art in Colombia" />
+    <p class="body_text">On a less sorrowful note, this final art piece was created as tribute to the Australian-Colombian Dialogue organization which represents stronger friendships and co-operations between the countries with the goal of improving the world.</p>
+    <p class="body_text">The artist goes by <a class="links" href="https://www.instagram.com/crispstreetart" target="_blank">Crisp</a>, and while they're based out of Australia, they have created various street art pieces around the world; which includes this one in Bogota, Colombia.</p>
+  </div>
+  
+  </div>
+
+
+
+
   <div class="footer">
     <div class="footer_content">
       <p title="Does nothing - just for show">Privacy</p>
@@ -184,7 +222,7 @@
       <p title="Does nothing - just for show">Feedback</p>
       <p title="Does nothing - just for show">Careers</p>
     </div>
-    <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
+     <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
   </div>
 
 </body>
