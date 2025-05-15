@@ -24,6 +24,7 @@ body {
 .sub_title {
   color: black;
   margin-inline: 10px;
+    font-size: 26px;
 }
 
 nav.nav_disappear {
@@ -153,10 +154,6 @@ nav logo {
   display: flex;
   justify-content: center;
 }
-
-/* .left_img{
-height: 90%;
-} */
 
 
 .body_content {
@@ -309,21 +306,8 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
 }
 
 
-/* .right_img {
-  width: 50%;
-  max-width: 300px;
-  float: right;
-  padding-right: 1%;
-} */
-
-
-
 /* Mobile-ish view */
 @media (max-width: 768px) {
-
-  /* p.body_text {
-    font-size: 20px;
-  } */
 
   .body_container {
     /* padding-top: 20px; */
@@ -331,20 +315,13 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
 
   }
 
-
-
 }
 
 
 /* Mobile view */
 @media (max-width: 600px) {
   .title {
-    font-size: 78px;
-  }
-
-  .sub_title {
-    font-weight: 600;
-    font-size: 20px;
+    font-size: 80px;
   }
 
   .pic_list {
