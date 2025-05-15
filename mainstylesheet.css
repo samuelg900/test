@@ -4,7 +4,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
-    min-width: 400px; 
+    min-width: 400px;
 }
 
 :root {
@@ -22,41 +22,38 @@ body {
     --body-title-size: 30px;
     --menu-text-size: 28px;
     --nav-text-size: 14px;
-    --logo-size: 24px;
+    --logo-size: 30px;
 
     /* colors */
-    
-    --primary-dark-grey: dimgray;
+
+    /* --primary-dark-grey: dimgray; */
+    --primary-dark-grey: rgb(55, 55, 55);
     --primary-light-grey: #cacaca;
     --primary-dark-blue: #1b4571;
     --primary-light-blue: rgb(72, 133, 209);
     --lighter-blue: #8ab8e9;
 }
 
-.links{
+.links {
     color: black;
-  }
-  
-  .links:hover{
+}
+
+.links:hover {
     color: var(--primary-light-blue);
-  }
+}
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 48px;
+    height: 54px;
     min-width: 375px;
     position: fixed;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    border-radius: 5px;
-    /* background: white; */
-    opacity: 0.9;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
-    /* max-width: 1600px; */
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 10px rgba(119, 119, 119, 0.4);
 }
 
 .nav-items {
@@ -66,8 +63,9 @@ nav {
 nav a {
     text-decoration: none;
     color: var(--primary-dark-grey);
-    height: inherit;  /* ?? */
-    padding: 20px 14px;
+    height: inherit;
+    /* ?? */
+    padding: 20px;
     display: flex;
     align-items: center;
     font-size: var(--nav-text-size);
@@ -79,11 +77,12 @@ nav a.active {
 
 nav a:hover {
     transition: 0.3s;
+    transform: scale(1.14);
 }
 
 
 nav logo {
-    margin-left: 10px;
+    margin-left: 20px;
     font-weight: bold;
     font-style: italic;
     font-size: var(--logo-size);
@@ -92,19 +91,19 @@ nav logo {
 .nav-dropdown {
     display: none;
     position: fixed;
-    top: 60px;
-    right: 10px;
-    opacity: 0.9;
+    top: 54px;
+    right: 0;
     float: right;
     min-width: 120px;
-    border-radius: 5px;
+    border-radius: 0 0 0 5px;
     animation: kf_nav_expand 0.3s;
     z-index: 101;
-    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 6px rgba(119, 119, 119, 0.4);
 }
+
 .nav-dropdown a {
     color: var(--primary-dark-grey);
-  }
+}
 
 @keyframes kf_nav_expand {
     0% {
@@ -142,6 +141,21 @@ nav logo {
 
 .material-symbols-outlined {
     display: none;
+}
+
+.divider_big {
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.5);
+    margin-block: 30px;
+}
+
+.divider_small {
+    width: 40%;
+    border: none;
+    border-top: 2px dashed rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
 
