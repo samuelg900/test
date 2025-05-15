@@ -339,7 +339,7 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
 /* Mobile view */
 @media (max-width: 600px) {
   .title {
-    font-size: 86px;
+    font-size: 78px;
   }
 
   .sub_title {
