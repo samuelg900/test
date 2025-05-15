@@ -1,48 +1,73 @@
 body {
-  background-color: white;
-  background-image: linear-gradient(rgb(4, 40, 103), rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255));
+  background-color: #F3FBFF;
+  /* background-image: linear-gradient(tan, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)); */
+  /* background-image: linear-gradient(rgb(4, 40, 103), rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)); */
   /* background-image: linear-gradient(rgb(120, 155, 216), rgb(227, 227, 119)); */
   /* font-family: 'Roboto', sans-serif; */
   /* min-height: 1000px; */
   /* height: 1900px; */
   /* font-family: Garamond, serif; */
-  
-    /* font-family: "Brush Script MT", cursive; */
-  
+
+  /* font-family: "Brush Script MT", cursive; */
+
 }
 
-body>h1 {
-  margin-top: 60px;
-  color: white;
+.title {
+  margin: 0;
+  padding-top: 100px;
+  /* font-size: 86px; */
+  font-size: 10vw;
+  color: #21306d;
+  margin-inline: 10px;
 }
 
-:root {
-  --step--2: clamp(0.6944rem, 0.4908rem + 1.0184vw, 1.28rem);
-  --step--1: clamp(0.8333rem, 0.5667rem + 1.3333vw, 1.6rem);
-  --step-0: clamp(1rem, 0.6522rem + 1.7391vw, 2rem);
-  --step-1: clamp(1.2rem, 0.7478rem + 2.2609vw, 2.5rem);
-  --step-2: clamp(1.44rem, 0.8539rem + 2.9304vw, 3.125rem);
-  --step-3: clamp(1.728rem, 0.9703rem + 3.7883vw, 3.9063rem);
-  --step-4: clamp(2.0736rem, 1.0965rem + 4.8856vw, 4.8828rem);
-  --step-5: clamp(2.4883rem, 1.2309rem + 6.2873vw, 6.1035rem);
+.sub_title {
+  color: black;
+  margin-inline: 10px;
+}
 
-  /* global text size variables */
-  --body-text-size: 24px;
-  --body-title-size: 30px;
-  --nav-text-size: 14px;
+nav.nav_disappear {
+  animation: nav_go_away 0.8s forwards;
+}
+
+@keyframes nav_go_away {
+  0% {
+    /* top: 10px; */
+  }
+
+  100% {
+    top: -80px;
+  }
+
+}
+
+nav.nav_appear {
+  animation: nav_come_back 0.8s forwards;
+}
+
+@keyframes nav_come_back {
+  0% {
+    top: -80px;
+  }
+
+  100% {
+    /* top: 10px; */
+  }
+
 }
 
 nav {
-  background: white;  
+  background-color: white;
+
 }
 
 nav a.active {
   color: var(--primary-light-blue);
 }
 
-nav a:hover {
+/* nav a:hover {
   background-color: var(--lighter-blue);
-}
+} */
 
 nav logo {
   color: var(--primary-dark-grey);
@@ -73,6 +98,7 @@ nav logo {
   aspect-ratio: 1.9/1;
   max-height: 600px;
   /* background-color: tan; */
+
 }
 
 .pic_list img {
@@ -89,27 +115,26 @@ nav logo {
 } */
 
 .slider-img {
-  width: 15%;
+  width: 20%;
   border-radius: 4px;
   position: relative;
   overflow: hidden;
   transition: 0.8s ease-out;
-  /* transition: width 0.6s;
-    transition-timing-function: cubic-bezier(0.1, 0.1, 0.5, 1); */
 }
 
 .slider-img.active {
   width: 100% !important;
   border-radius: 0;
   height: 75% !important;
+
   /* height: fit-content !important; */
 
   animation: polaroid_border 0.6s forwards;
 }
 
-.image_on_right{
+.image_on_right {
   width: 40%;
-  height:350px;
+  height: 350px;
   position: relative;
   overflow: hidden;
   float: right;
@@ -118,7 +143,7 @@ nav logo {
   justify-content: center;
 }
 
-.image_on_left{
+.image_on_left {
   width: 40%;
   height: 350px;
   position: relative;
@@ -145,7 +170,8 @@ height: 90%;
 }
 
 .body_container {
-  margin-block: 20px;
+  /* margin-block: 20px; */
+  /* margin: 0; */
   padding-inline: 4%
 }
 
@@ -153,9 +179,9 @@ height: 90%;
   text-align: center;
   margin: 0;
   font-size: 26px;
-  color: #1e4670;
+  /* color: #1e4670; */
   font-weight: 600;
-  padding-bottom: 20px;
+  /* padding-bottom: 20px; */
 }
 
 .body_pano {
@@ -171,7 +197,6 @@ height: 90%;
   font-size: 18px;
   margin: 0;
   margin-bottom: 12.5px;
-  /* margin-top: 10px; */
   line-height: 1.4;
   /* padding-bottom: 20px; */
 }
@@ -272,13 +297,14 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
 
 .overlay p {
   margin-inline: 5%;
-  font-size: var(--step--1);
+  font-size: var(--step--2);
   color: white;
 }
 
 
 .footer {
-  background-color: #a99e81;
+  /* background-color: rgb(191, 165, 130); */
+  background-color: #243848;
   color: white;
 }
 
@@ -300,16 +326,26 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
   } */
 
   .body_container {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     padding-inline: 2%;
-    
+
   }
+
+
 
 }
 
 
 /* Mobile view */
 @media (max-width: 600px) {
+  .title {
+    font-size: 86px;
+  }
+
+  .sub_title {
+    font-weight: 600;
+    font-size: 20px;
+  }
 
   .pic_list {
     display: flex;
@@ -363,23 +399,21 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
     display: block;
   } */
 
-  
-.overlay p {
-font-size: var(--step-0);
-}
 
-.image_on_right{
-  width: 100%;
-  height: 400px;
-  margin-bottom: 10px;
-}
+  .overlay p {
+    font-size: var(--step-0);
+  }
 
-.image_on_left{
-  /* display: none; */
-  width: 100%;
-  
-  height: 400px;
-  margin-bottom: 10px;
-}
+  .image_on_right {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+  }
+
+  .image_on_left {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 10px;
+  }
 
 }
