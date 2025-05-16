@@ -136,10 +136,24 @@ nav logo {
 }
 
 .title_home {
+    margin: 0;
     margin-top: 80px;
-    text-align: center;
     color: #1b4571;
-    font-size: var(--step-2);
+    font-weight: 500;
+    font-size: var(--step-3);
+}
+
+.about_me_text{
+  line-height: 1.4;
+}
+
+.body_content{
+    display: block;
+    margin-inline: auto;
+    justify-self: center;
+    width: 90%;
+    height: fit-content;
+    max-width: 1000px;
 }
 
 .cardviewTan {
