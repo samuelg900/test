@@ -63,8 +63,7 @@ nav {
 nav a {
     text-decoration: none;
     color: var(--primary-dark-grey);
-    height: inherit;
-    /* ?? */
+    height: inherit;   /* ?? */
     padding: 20px;
     display: flex;
     align-items: center;
@@ -136,7 +135,11 @@ nav logo {
 }
 
 .nav-dropdown a:hover {
-    transition: 0.3s;
+    background-color: var(--primary-light-grey);
+}
+
+.nav-dropdown a.active {
+  color: var(--primary-light-blue);
 }
 
 .material-symbols-outlined {
@@ -154,7 +157,7 @@ nav logo {
     width: 40%;
     border: none;
     border-top: 2px dashed rgba(0, 0, 0, 0.2);
-    margin-top: 15px;
+    margin-top: 20px;
     margin-bottom: 30px;
 }
 
