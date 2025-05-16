@@ -1,139 +1,142 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="mainstylesheet.css">
-<link rel="stylesheet" href="home.css">
-<title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="mainstylesheet.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Home</title>
 </head>
+
 <body>
 
-<nav> 
-    <logo>LSM</logo>
-    <div class="nav-items">
-    <a class="active" href="home.html">HOME</a>
-     <a href="404.html">SKILLS</a>
-    <a href="artwork.html">ART</a>
-    <a href="about.html">ABOUT</a>
-    <!-- <b class="hamburger" onclick="toggleMenu()">&#9776;</b> -->
-     
-    <!-- <b class="hamburger" onclick="toggleMenu()">&#9776;</b> -->
-    <!-- <span class="material-symbols-outlined menu-icon" onclick="toggleMenu()">
-        menu
-        </span> -->
-        <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+    <nav>
+        <logo>LSM</logo>
+        <div class="nav-items">
+            <a class="active" href="home.html">HOME</a>
+            <a href="skills.html">SKILLS</a>
+            <a href="artwork.html">ART</a>
+            <a href="about.html">ABOUT</a>
+
+            <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+        </div>
+    </nav>
+
+    <div id="dropdownID" class="nav-dropdown">
+        <a class="active" href="home.html">HOME</a>
+        <a href="skills.html">SKILLS</a>
+        <a href="artwork.html">ART</a>
+        <a href="about.html">ABOUT</a>
     </div>
-</nav>
 
-<div id="dropdownID" class="nav-dropdown">
-    <a href="home.html">HOME</a>
-    <a href="skills.html">SKILLS</a>
-    <a href="artwork.html">ART</a>
-    <a href="about.html">ABOUT</a>
-</div>
+    <script>
+        function toggleMenu() {
+            let menu = document.getElementById("dropdownID");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
 
-<script>    
-    function toggleMenu() {
-    let menu = document.getElementById("dropdownID");
-      if (menu.style.display === "block") {
-        menu.style.display = "none";
-      } else {
-        menu.style.display = "block";
-      }
-  
-    }
-    
-//makes the dropdown menu disappear when screen resizes
-window.addEventListener('resize', () => {
-    if(document.getElementById("dropdownID").style.display==='block')
-        document.getElementById("dropdownID").style.display = 'none';
-});
+        }
 
-window.addEventListener('scroll', () => {
-    if(document.getElementById("dropdownID").style.display==='block')
-        document.getElementById("dropdownID").style.display = 'none';
-});
+        //makes the dropdown menu disappear when screen resizes
+        window.addEventListener('resize', () => {
+            if (document.getElementById("dropdownID").style.display === 'block')
+                document.getElementById("dropdownID").style.display = 'none';
+        });
 
-</script>
+        window.addEventListener('scroll', () => {
+            if (document.getElementById("dropdownID").style.display === 'block')
+                document.getElementById("dropdownID").style.display = 'none';
+        });
 
-<div class="backcover">
-     <img src="home_images/home_background.jpg"> 
-</div>
+    </script>
+
+    <div class="backcover">
+        <img src="home_images/home_background.jpg">
+    </div>
 
     <div class="div_me">
-        <div class="title_text">
-        <p>University of New Hampshire '24</p>
 
+        <div class="div_pic">
+            <img src="home_images/mypic.jpeg" alt="Me">
         </div>
-        <img src="home_images/mypic.jpeg" alt="Me" >
-        
-        
-        <div class="title_text">
-        <p>Computer Scientist</p>
+
+        <div class="div_content">
+            
+            <div class="title_text">
+                <p>University of New Hampshire '24<br>Computer Scientist</p>
+            </div>
+
+            <div class="div_buttons">
+                <button class="contact_button" onclick="window.location.href='https://www.linkedin.com/in/luis-s-morel/'">Contact</button>
+                <button class="resume_button" onclick="window.open('My Resume.pdf', '_blank')">Resume</button>
+            </div>
         </div>
-        <!-- <div class="title_me">
-            <p>Computer Scientist</p>
-        </div> -->
+
     </div>
 
-<p class="title_home">What's my story?</p>
 
-<div class="cardviewWhite">
-    <div class="text_on_left">
-        <p>Now this is a story of just about how I ended up here with a look and a frown</p>
+
+    <p class="title_home">What's my story?</p>
+
+    <div class="cardviewWhite">
+        <div class="text_on_left">
+            <p>Now this is a story of just about how I ended up here with a look and a frown</p>
+        </div>
+
+        <div class="div_image">
+            <img class="image" src="home_images/babyme.jpg" alt="Baby Me">
+        </div>
+
     </div>
-    
-    <div class="div_image">
-        <img class="image" src="home_images/babyme.jpg" alt="Baby Me" >
+
+    <div class="cardviewTan">
+        <div class="div_image">
+            <img id="myImage" class="image" src="home_images/flightme.jpg" alt="Army">
+        </div>
+
+        <div class="text_on_right">
+            <p>In the DR I was born and raised then came to the US to better my days</p>
+        </div>
     </div>
 
-</div>
+    <div class="cardviewWhite">
+        <div class="text_on_left">
+            <p>I joined the army and my mom got scared and said you better go to college and park your butt on a chair
+            </p>
+        </div>
 
-
-<div class="cardviewTan">
-    <div class="div_image">
-        <img id="myImage" class="image" src="home_images/flightme.jpg" alt="Army" >
+        <div class="div_image">
+            <img class="image" src="home_images/armyme.jpg" alt="Work">
+        </div>
     </div>
-    
-    <div class="text_on_right">
-        <p>In the DR I was born and raised then came to the US to better my days</p>
-    </div>
-</div>
 
+    <div class="cardviewTan">
+        <div class="div_image">
+            <img class="image" src="home_images/schoolme.jpg" alt="School">
+        </div>
 
-<div class="cardviewWhite">
-    <div class="text_on_left">
-        <p>I joined the army and my mom got scared and said you better go to college and park your butt on a chair</p>
-     </div>
-    
-    <div class="div_image">
-        <img class="image" src="home_images/armyme.jpg" alt="Work" >
+        <div class="text_on_right">
+            <p>Now I'm here with a BS in CS and all I need is a job and fresh air</p>
+        </div>
     </div>
-</div>
 
-<div class="cardviewTan">
-    <div class="div_image">
-        <img class="image" src="home_images/schoolme.jpg" alt="School" >
+    <div class="footer">
+        <div class="footer_content">
+            <p title="Does nothing - just for show">Privacy</p>
+            <p title="Does nothing - just for show">Terms</p>
+            <p title="Does nothing - just for show">Feedback</p>
+            <p title="Does nothing - just for show">Careers</p>
+        </div>
+        <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
+        <img class="footer_image" src="art_images/fresh_prince.png">
     </div>
-    
-    <div class="text_on_right">
-       <p>Now I'm here with a BS in CS and all I need is a job and fresh air</p>
-     </div>
-</div>
-
-<div class="footer">
-    <div class="footer_content">
-        <p title="Does nothing - just for show">Privacy</p>
-        <p title="Does nothing - just for show">Terms</p>
-        <p title="Does nothing - just for show">Feedback</p>
-        <p title="Does nothing - just for show">Careers</p>    
-    </div>
-    <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
-    <img class="footer_image" src="art_images/fresh_prince.png" >
-</div>
 
 </body>
+
 </html>
