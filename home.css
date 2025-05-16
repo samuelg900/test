@@ -2,10 +2,54 @@ body {
     background-color: white;
 }
 
-/*global variables*/
-:root {
-    --titletextsize: 6vw;
-    --cardtextsize: 3.2vw;
+
+.contact_button{
+    background-color: var(--primary-light-blue);
+    color: white;
+    border-radius: 5px;
+    width: 120px;
+    /* width: 58%; */
+    aspect-ratio: 3/1;
+    font-size: 16px;
+    border: none;
+    margin-inline:2%;
+
+}
+
+.contact_button a{
+    text-decoration: none;
+    color: white;
+}
+
+.contact_button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+.resume_button{
+    background-color: white;
+    color: var(--primary-light-blue);
+    border-radius: 5px;
+    width: 120px;
+    font-size: 16px;
+
+    aspect-ratio: 3/1;
+    border: 2px solid var(--primary-light-blue);
+    margin-inline:2%;
+}
+
+.resume_button:hover{
+    opacity: 0.6;
+    cursor: pointer;
+       /* background-color: var(--primary-light-blue);
+    color: white;
+    border: 2px solid var(--primary-light-blue); */
+}
+
+.div_buttons{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 nav {
@@ -32,10 +76,6 @@ nav logo {
     background-color: white;
 }
 
-.nav-dropdown a:hover {
-    background-color: var(--primary-dark-grey);
-}
-
 .material-symbols-outlined {
     color: var(--primary-dark-grey);
 }
@@ -54,28 +94,36 @@ nav logo {
     justify-content: center;
     padding-inline: 5%;
 }
+.div_pic{
+    margin-right: 5%;
+}
+.div_pic img {
+    /* position: absolute; */
+    width: min(350px, 40vw);
+    height: auto;
+    /* height: min(350px, 40vw); */
+    border-radius: 50%;
+    border: 3px solid white;
+    margin-top: -50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    justify-self: center;
+}  
+
+
+.div_content{
+    justify-items: center;
+    margin-left: 5%;
+}
 
 .title_text {
-    width: 30%;
-    margin-top: -15px;
+    margin-top: -10px;
     text-align: center;
-    font-size: var(--step--2);
+    font-size: var(--step--1);
     font-weight: 500;
     font-style: italic;
     color: #565b61;
 }
-
-.div_me img {
-    /* position: absolute; */
-    width: min(350px, 40vw);
-    height: min(350px, 40vw);
-    border-radius: 50%;
-    border: 3px solid white;
-    margin-top: -180px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    margin-inline: 5%;
-    justify-self: center;
-}   
+ 
 
 .title_me {
     text-align: center;
@@ -163,6 +211,10 @@ img.image {
 /* Mobile view */
 @media(max-width: 600px) {
 
+    .div_content {
+        margin: 0;
+    }
+
     .title_text {
         display: none;
     }
@@ -186,14 +238,19 @@ img.image {
         flex-direction: column;
         align-items: center;
         padding-inline: 0;
-    }
-
-    .div_me img {
-        width: 260px;
-        height: 260px;
-        margin-inline: 0%;
-        margin-top: -125px;
-    }
+        }
+        
+        .div_pic {
+            margin-right: 0;
+        }
+        
+        .div_pic img {
+            width: 260px;
+            height: 260px;
+            margin-inline: 0%;
+            margin-top: -125px;
+        
+        }
 
     .cardviewTan {
         flex-direction: column;
