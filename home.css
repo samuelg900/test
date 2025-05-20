@@ -276,6 +276,10 @@ nav logo {
 /* Mobile view */
 @media(max-width: 600px) {
 
+     .div_content{
+        margin-left: 0;
+    }
+
     .line_combo{
         display: none;
     }
