@@ -1,200 +1,266 @@
 <!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="mainstylesheet.css">
-    <link rel="stylesheet" href="artwork.css">
-   
-<title>Artwork</title>
-</head>
-<body>
-    <nav> 
-        <logo>LSM</logo>
-        <div class="nav-items">
-            <a href="home.html">HOME</a>
-             <a href="404.html">SKILLS</a>
-        <a class="active" href="artwork.html">ART</a>
-        <a href="about.html">ABOUT</a>  
-        
-        <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
-    
-    </div>
-</nav>
+<html>
 
-<div id="dropdownID" class="nav-dropdown">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="mainstylesheet.css">
+  <link rel="stylesheet" href="artwork.css">
+
+  <title>Artwork</title>
+</head>
+
+<body>
+
+  <nav id="navbar" class="nav_appear">
+    <logo>LSM</logo>
+    <div class="nav-items">
+      <a href="home.html">HOME</a>
+      <a href="skills.html">SKILLS</a>
+      <a class="active" href="artwork.html">ART</a>
+      <a href="about.html">ABOUT</a>
+      <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+    </div>
+  </nav>
+
+  <script src="webfunctions.js"></script>
+
+  <div id="dropdownID" class="nav-dropdown">
     <a href="home.html">HOME</a>
     <a href="skills.html">SKILLS</a>
-    <a href="artwork.html">ART</a>
+    <a class="active" href="artwork.html">ART</a>
     <a href="about.html">ABOUT</a>
-</div>
+  </div>
 
-<script>    
+  <script>
     function toggleMenu() {
-    let menu = document.getElementById("dropdownID");
+      let menu = document.getElementById("dropdownID");
       if (menu.style.display === "block") {
         menu.style.display = "none";
       } else {
         menu.style.display = "block";
       }
-  
+
     }
-    
-//makes the dropdown menu disappear when screen resizes
-window.addEventListener('resize', () => {
-    if(document.getElementById("dropdownID").style.display==='block')
-        document.getElementById("dropdownID").style.display = 'none';
-});
 
-window.addEventListener('scroll', () => {
-    if(document.getElementById("dropdownID").style.display==='block')
-        document.getElementById("dropdownID").style.display = 'none';
-});
+    //makes the dropdown menu disappear when screen resizes
+    window.addEventListener('resize', () => {
+      if (document.getElementById("dropdownID").style.display === 'block')
+          document.getElementById("dropdownID").style.display = 'none';
+    });
 
-</script>
+    window.addEventListener('scroll', () => {
+      if (document.getElementById("dropdownID").style.display === 'block')
+          document.getElementById("dropdownID").style.display = 'none';
+    });
 
-<!-- <h1 class="title">My Artwork</h1> -->
+  </script>
 
-<!-- viewport that holds currently selected image -->
-<div class="pic_viewport">
-    <img class="image_div" id="imageID" src="art_images/1.jpg" alt="placeholder" >
-    <div class="image_text">
-        <p id="text_id"></p>
-    </div>
-    
-</div>
+  <script>
+    const artDes = [];
+    //switches the opacity of the image and overlay
+    function changeOpacity(num) {
+      let img = document.getElementById('imageId' + num);
+      let overlay = document.getElementById('overlayId' + num);
 
-<!-- list of images that can be clicked to change the image in the viewport -->
-<div class="pic_list">
-    <script>
-            let newImage;
-            for (let i = 1; i < 10; i++) {
-                newImage = document.createElement('img');
-                newImage.setAttribute('src', 'art_images/' + i + '.jpg');
-                newImage.setAttribute('class', 'image');
-                newImage.setAttribute('onclick', 'changeImage("art_images/' + i + '.jpg", ' + i + ')');
-                document.querySelector('.pic_list').appendChild(newImage);
-            }
-    </script>
-</div>
+      const style = window.getComputedStyle(img);
+      const opacity = style.getPropertyValue('opacity');
 
-<!-- mobile version of the page -->
-<div class="mobile_pic_list">
+      if (opacity == 0) {
+        img.style.opacity = 1;
+        overlay.style.opacity = 0;
+      }
+      else {
+        img.style.opacity = 0;
+        overlay.style.opacity = 1;
+      }
+    }
 
-    <script>
-        // Fetches the JSON file and creates the image and description elements
-        function jsonFunc(data, jsonIsGood) {
+    //adds the description of artwork to array
+    function artDetails(desc) {
+      artDes.push(desc);
+    }
 
-            let desc;
-            let art_pic;
-            let imageContainer;
-            let p;
+    function func_active(element, i) {
 
-            for (let i = 1; i < 10; i++) {
-                
-            // Create the div element for back side (description)
-            desc = document.createElement('div');
-            desc.setAttribute('class', 'overlay');
-            desc.setAttribute('id', 'overlayId'+i);
+      // Get the currently active image
+      const activeImage = document.querySelector('.slider-img.active');
 
-            p = document.createElement('p');
-
-            if(jsonIsGood){
-                p.innerHTML = data[i - 1].piece_description;
-                artDetails(data[i - 1].piece_description);
-            }
-            else
-                p.innerHTML = "There was an issue retrieving the JSON file image data";
-
-            desc.appendChild(p);
-    
-            // Create the img element for the front side (image)
-            art_pic = document.createElement('img');
-            art_pic.setAttribute('src', 'art_images/' + i + '.jpg');
-            art_pic.setAttribute('class', 'image_mobile');
-            art_pic.setAttribute('id', 'imageId'+i);
-    
-            // Create the div element for the image container
-            imageContainer = document.createElement('div');
-            imageContainer.setAttribute('class', 'imageContainer');
-            imageContainer.setAttribute('onclick', 'changeOpacity("'+i+'")');
-            imageContainer.appendChild(desc);
-            imageContainer.appendChild(art_pic);
-    
-            document.querySelector('.mobile_pic_list').appendChild(imageContainer);
-            }
+      if (activeImage === element) {
+        changeOpacity(i);
+        if (activeImage.querySelector('div').style.opacity == 1) {
+          activeImage.classList.add('back_class');
+        } else {
+          activeImage.classList.remove('back_class');
         }
-        
-        fetch('json/artwork.json')
+
+      }// If there is an active image, remove the active class from it
+      else if (activeImage) {
+        console.log(activeImage);
+        activeImage.classList.remove('active');
+        activeImage.querySelector('div').style.opacity = 0;
+        activeImage.querySelector('img').style.opacity = 1;
+        element.classList.add('active');
+        activeImage.classList.remove('back_class');
+
+      }
+    }
+
+  </script>
+
+  <div class="body_content">
+    <h1 class="title">Welcome to my <br>creative space</h1>
+    <h3 class="sub_title">Here you will find a few of the drawings and paintings I've created over the years</h3>
+  </div>
+
+  <div class="pic_list">
+    <script>
+
+      function jsonFunc(data, jsonIsGood) {
+
+        let newImage;
+        let desc;
+        let overlay_;
+        let p;
+
+        for (let i = 1; i < 10; i++) {
+
+
+          overlay_ = document.createElement('div');
+          overlay_.setAttribute('class', 'overlay');
+          overlay_.setAttribute('id', 'overlayId' + i);
+
+          p = document.createElement('p');
+
+          if (jsonIsGood) {
+            p.innerHTML = data[i - 1].piece_description;
+            artDetails(data[i - 1].piece_description);
+          }
+          else
+            p.innerHTML = "There was an issue retrieving the JSON file image data";
+
+          overlay_.appendChild(p);
+
+          newImage = document.createElement('img');
+          newImage.setAttribute('src', 'art_images/' + i + '.jpg');
+          newImage.setAttribute('id', 'imageId' + i);
+
+          desc = document.createElement('div');
+          desc.setAttribute('class', 'slider-img');
+          if (i === 3) desc.classList.add('active');
+
+
+          desc.setAttribute('onclick', 'func_active(this, ' + i + ')');
+          desc.appendChild(overlay_);
+          desc.appendChild(newImage);
+
+          document.querySelector('.pic_list').appendChild(desc);
+        }
+      }
+
+      fetch('json/artwork.json')
         .then(response => {
           if (!response.ok) {
             throw new Error('Network response was not ok ' + response.statusText);
           }
-          
+
           return response.json();
         })
         .then(data => {
-            jsonFunc(data, true);
-
-            //sets up the first image description for the viewport
-            changeImage('art_images/1.jpg', 1);
-
+          jsonFunc(data, true);
         })
         .catch(error => {
-            //console.error('There was a problem with the fetch operation:', error);
-            jsonFunc(null, false);
+          //console.error('There was a problem with the fetch operation:', error);
+          jsonFunc(null, false);
         })
-    
-    </script>
-</div>
 
-<div class="footer">
+    </script>
+
+  </div>
+
+  <div class="body_content">
+    <div class="body_container">
+      <p class="body_title">Art can be everywhere—on canvases, in alleys, on walls </p>
+      <p style="text-align: center; font-size: 20px; font-weight: 400;">These are some of the artworks I've seen around
+        the world</p>
+    </div>
+
+    <div class="body_container">
+      <hr class="divider_big">
+      <img class="body_pano" src="art_images/pano_vermont.jpg" alt="Burlington, VT - Street Art" />
+      <p class="body_text">Presumably commissioned in 2014 by the University of Vermont in Burlington, VT, this painting
+        tells a story that many seem to struggle with; that of finding one's voice. The artist <a class="links"
+          href="https://www.instagram.com/sarahcrutherford" target="_blank">Sarah C. Rutherford</a>, says she personally
+        feels connected with this story as it reminds her of her own experience at UVM while being a student advocate at
+        the university.</p>
+    </div>
+
+
+    <div class="body_container">
+      <hr class="divider_small">
+      <div class="image_on_right">
+        <img src="art_images/raizal_woman.jpg" alt="Raizal Woman - Street Art">
+      </div>
+      <p class="body_text">Situated on Av. El Dorado in Bogotá, Colombia, we see a painting of an Afro-Colombian woman
+        looking serene as she seems to glance down at the street below. Although this piece is one of several paintings
+        on a short stretch of road, it's unclear whether the same artist created the others. Despite the surrounding artwork, this painting stands out for its simple yet impactful imagery.</p>
+      <p class="body_text">The artist, who goes by <a class="links" href="https://www.instagram.com/jotados_graffiti"
+          target="_blank">Jotados Graffiti</a>, says the painting is a homage to the island of San Andres and its
+        "magic." San Andres is an island of Colombia in the Caribbean Sea which was once primarily inhabited by a black
+        colombian ethnic group called the Raizal. While the Raizal people's population is much lower than it once used
+        to be, this painting still demonstrates that their cultural roots still remain deeply embedded in the island's
+        identity. The painting may also serve as a tribute to the enduring presence of their Afro-Caribbean heritage and
+        the resilience of a community that continues to preserve its traditions and way of life despite unchecked
+        tourism and other ongoing challenges. </p>
+    </div>
+
+    <div class="body_container">
+      <hr class="divider_small">
+      <div class="image_on_left">
+        <img src="art_images/kiss.jpg" class="left_img" alt="The Kiss of the Invisibles - Street Art">
+      </div>
+
+      <p class="body_text">“The Kiss of the Invisibles” is the title of this artwork located in Bogotá, Colombia. It was
+        created by <a class="links" href="https://www.instagram.com/vertigograffiti/" target="_blank">Vértigo
+          Graffiti</a> alongside a couple fellow artists. This piece was inspired by the late Héctor Fabio Zamora's 2013
+        photograph “Beso del Bronx,” which captures a homeless couple embracing as they lie on the streets of the El
+        Bronx neighborhood.</p>
+      <p class="body_text">El Bronx was a multi-crime infested neighborhood which the government of Colombia set out to
+        dismantle in 2016. With a multitude of law enforcement officers, the neighborhood was raided and cleared out in
+        a massive operation that exposed rampant drug trafficking, human trafficking, and extreme poverty. This action
+        marked the beginning of an urban renewal project aimed at transforming the area into a cultural and creative
+        hub.</p>
+      <p class="body_text">With all the chaos and violence, the couple was caught in the middle of it all portraying
+        that although they were surrounded by suffering, love can not only exist but endure and prevail. Their embrace
+        reminds us that, despite how often homeless individuals are dehumanized, they feel, love, and hope just like the
+        rest of us.</p>
+    </div>
+
+    <div class="body_container">
+      <hr class="divider_small">
+      <img class="body_pano" src="art_images/pano_colombia.jpg" alt="Australian-Colombian - Street Art" />
+      <p class="body_text">On a less sorrowful note, this final art piece was created as tribute to the
+        Australian-Colombian Dialogue organization which represents stronger friendships and co-operations between the
+        countries with the goal of improving the world.</p>
+      <p class="body_text">The artist goes by <a class="links" href="https://www.instagram.com/crispstreetart"
+          target="_blank">Crisp</a>, and while they're based out of Australia, they have created various street art
+        pieces around the world; which includes this one in Bogota, Colombia.</p>
+    </div>
+
+  </div>
+
+  <div class="footer">
     <div class="footer_content">
-        <p title="Does nothing - just for show">Privacy</p>
-        <p title="Does nothing - just for show">Terms</p>
-        <p title="Does nothing - just for show">Feedback</p>
-        <p title="Does nothing - just for show">Careers</p>    
+      <p title="Does nothing - just for show">Privacy</p>
+      <p title="Does nothing - just for show">Terms</p>
+      <p title="Does nothing - just for show">Feedback</p>
+      <p title="Does nothing - just for show">Careers</p>
     </div>
     <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
-</div>
-
-<script>
-
-    //holds the descriptions of the artwork
-    const artDes = [];
-
-    //switches the opacity of the image and overlay
-    function changeOpacity(num) {
-        var img = document.getElementById('imageId'+num);
-        var overlay = document.getElementById('overlayId'+num);
-
-        const style = window.getComputedStyle(img);
-        const opacity = style.getPropertyValue('opacity');
-
-        if(opacity == 0) {
-            img.style.opacity = 1;
-            overlay.style.opacity = 0;
-        }
-        else {
-            img.style.opacity = 0;
-            overlay.style.opacity = 1;
-        }
-    }
-
-    //changes the image and description in viewport
-    function changeImage(imageSrc, num) {
-        document.getElementById('imageID').src = imageSrc;
-        document.getElementById('text_id').innerHTML = artDes[parseInt(num) - 1];
-    }
-
-    //adds the description of artwork to array
-    function artDetails(desc){
-        artDes.push(desc);
-    }
-</script>
-
+  </div>
 
 </body>
+
 </html>
