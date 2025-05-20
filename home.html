@@ -8,13 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="mainstylesheet.css">
     <link rel="stylesheet" href="home.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <title>Home</title>
 </head>
 
 <body>
 
-    <nav>
-        <logo>LSM</logo>
+    <nav id="navbar" class="nav_appear">
+        <logo>LSM </logo>
         <div class="nav-items">
             <a class="active" href="home.html">HOME</a>
             <a href="skills.html">SKILLS</a>
@@ -24,6 +26,8 @@
             <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
         </div>
     </nav>
+
+    <script src="webfunctions.js"></script>
 
     <div id="dropdownID" class="nav-dropdown">
         <a class="active" href="home.html">HOME</a>
@@ -67,66 +71,123 @@
         </div>
 
         <div class="div_content">
-            
 
+            <h1 class="name">Luis S. Morel</h1>
             <div class="title_text">
                 <p>University of New Hampshire '24<br>Computer Scientist</p>
             </div>
 
             <div class="div_buttons">
-                <button class="contact_button" onclick="window.location.href='https://www.linkedin.com/in/luis-s-morel/'">Contact</button>
+                <button class="contact_button"
+                    onclick="window.open(`https://www.linkedin.com/in/luis-s-morel/`, '_blank')">Contact</button>
                 <button class="resume_button" onclick="window.open('My Resume.pdf', '_blank')">Resume</button>
             </div>
         </div>
 
     </div>
 
+    <!-- Ideas for website design -->
+    <!-- https://dribbble.com/tags/profile-page# -->
+
     <div class="body_content">
-    <p class="title_home">About Me</p>
-    <p class="about_me_text">This is filler text. John Doe is a quiet yet observant individual who tends to blend into the background in most situations. Known for his calm demeanor and thoughtful approach to life, he rarely seeks the spotlight but is always dependable when needed. Whether he's sipping coffee at a local café or walking through the park with a book in hand, John exudes a quiet confidence that draws people in without saying much. He enjoys simple routines, meaningful conversations, and the occasional spontaneous adventure—though he'd never admit it. While much about John remains a mystery, those who take the time to get to know him are often surprised by his dry sense of humor and deep well of insight.</p>
-    </div>
+        <hr class="divider_big">
+        <p class="title_home">About Me</p>
+        <p class="about_me_text">This is filler text. John Doe is a quiet yet observant individual who tends to blend
+            into the background in most situations. Known for his calm demeanor and thoughtful approach to life, he
+            rarely seeks the spotlight but is always dependable when needed. Whether he's sipping coffee at a local café
+            or walking through the park with a book in hand, John exudes a quiet confidence that draws people in without
+            saying much. He enjoys simple routines, meaningful conversations, and the occasional spontaneous
+            adventure—though he'd never admit it. While much about John remains a mystery, those who take the time to
+            get to know him are often surprised by his dry sense of humor and deep well of insight.</p>
 
-    <div class="cardviewWhite">
-        <div class="text_on_left">
+        <hr class="divider_big">
+
+        <div class="cardviewTan" data-aos="fade-up">
             <p>Now this is a story of just about how I ended up here with a look and a frown</p>
+
+            <div class="div_image">
+                <img id="pic_id" class="image" src="home_images/babyme.jpg" alt="Baby Me">
+            </div>
+
+        </div>
+        
+        <div class="line_combo">
+            <div class="right_line"></div>
+            <hr class="custom_divider">
+            <div class="left_line"></div>
         </div>
 
-        <div class="div_image">
-            <img class="image" src="home_images/babyme.jpg" alt="Baby Me">
-        </div>
+        <div class="cardviewWhite" data-aos="fade-up">
 
-    </div>
-
-    <div class="cardviewTan">
-        <div class="div_image">
-            <img id="myImage" class="image" src="home_images/flightme.jpg" alt="Army">
-        </div>
-
-        <div class="text_on_right">
             <p>In the DR I was born and raised then came to the US to better my days</p>
-        </div>
-    </div>
 
-    <div class="cardviewWhite">
-        <div class="text_on_left">
+            <div class="div_image">
+                <img class="image" src="home_images/flightme.jpg" alt="Army">
+            </div>
+
+        </div>
+
+        <div class="line_combo reverse">
+            <div class="right_line"></div>
+            <hr class="custom_divider">
+            <div class="left_line"></div>
+        </div>
+
+        <div class="cardviewTan" data-aos="fade-up">
             <p>I joined the army and my mom got scared and said you better go to college and park your butt on a chair
             </p>
+
+            <div class="div_image">
+                <img class="image" src="home_images/armyme.jpg" alt="Work">
+            </div>
         </div>
 
-        <div class="div_image">
-            <img class="image" src="home_images/armyme.jpg" alt="Work">
-        </div>
-    </div>
-
-    <div class="cardviewTan">
-        <div class="div_image">
-            <img class="image" src="home_images/schoolme.jpg" alt="School">
+        <div class="line_combo">
+            <div class="right_line"></div>
+            <hr class="custom_divider">
+            <div class="left_line"></div>
         </div>
 
-        <div class="text_on_right">
+        <div class="cardviewWhite" data-aos="fade-up">
+
             <p>Now I'm here with a BS in CS and all I need is a job and fresh air</p>
+
+            <div class="div_image">
+                <img class="image" src="home_images/schoolme.jpg" alt="School">
+            </div>
+
         </div>
+
     </div>
+
+    <script>
+        
+        function updateLines() {
+            const combos = document.querySelectorAll(".line_combo");
+
+            combos.forEach(combo => {
+                const line = combo.querySelector(".custom_divider");
+                const rightLine = combo.querySelector(".right_line");
+                const leftLine = combo.querySelector(".left_line");
+
+                const pic = document.getElementById("pic_id");
+                const picRect = pic ? pic.getBoundingClientRect() : { x: 0, width: 70 };
+
+                const width = (((picRect.x + picRect.width / 2) - (window.innerWidth / 2)) * 2);
+                line.style.width = `${width}px`;
+
+                const lineRect = line.getBoundingClientRect();
+
+                rightLine.style.left = `${line.getBoundingClientRect().x + (lineRect.width)}px`;
+                leftLine.style.left = `${line.getBoundingClientRect().x}px`;
+
+            });
+         
+        }
+
+        window.addEventListener('resize', updateLines);
+        window.addEventListener('DOMContentLoaded', updateLines);
+    </script>
 
     <div class="footer">
         <div class="footer_content">
@@ -136,8 +197,16 @@
             <p title="Does nothing - just for show">Careers</p>
         </div>
         <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
-        <img class="footer_image" src="art_images/fresh_prince.png">
+        <img class="footer_image" src="home_images/fresh_prince.png">
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+        });
+        //   once: true,});
+    </script>
 
 </body>
 
