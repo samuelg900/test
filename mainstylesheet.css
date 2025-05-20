@@ -5,6 +5,8 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     min-width: 400px;
+    width: 100%;
+    /* max-width: 1400px; */
 }
 
 :root {
@@ -79,6 +81,36 @@ nav a:hover {
     transform: scale(1.14);
 }
 
+nav.nav_disappear {
+  animation: nav_go_away 0.8s forwards;
+}
+
+@keyframes nav_go_away {
+  0% {
+    /* top: 10px; */
+  }
+
+  100% {
+    top: -80px;
+  }
+
+}
+
+nav.nav_appear {
+  animation: nav_come_back 0.8s forwards;
+}
+
+@keyframes nav_come_back {
+  0% {
+    top: -80px;
+  }
+
+  100% {
+    /* top: 10px; */
+  }
+
+}
+
 
 nav logo {
     margin-left: 20px;
@@ -98,6 +130,7 @@ nav logo {
     animation: kf_nav_expand 0.3s;
     z-index: 99;
     box-shadow: 0 1px 10px rgba(119, 119, 119, 0.4);
+    background-color: white;
 }
 
 .nav-dropdown a {
