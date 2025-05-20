@@ -1,5 +1,46 @@
 body {
     background-color: white;
+
+    /* font-family: 'Graphik Web', sans-serif; */
+}
+
+.line_combo{
+margin: 0;
+padding: 0;
+}
+
+.custom_divider {
+  border: none;
+  border-top: 2px solid #000;
+  margin-block: 0;
+  width: 70px;
+}
+
+.right_line,
+.left_line {
+  position: absolute;
+  height: 100px;
+  z-index: -1;
+}
+
+.right_line {
+  border-left: 2px solid #000;
+  margin-top: -98px;
+}
+
+.left_line {
+  border-left: 2px solid #000;
+  margin-bottom: -100px;
+}
+
+.line_combo.reverse .right_line {
+  margin-bottom: -100px;
+  margin-top: 0;
+}
+
+.line_combo.reverse .left_line {
+  margin-top: -100px;
+  margin-bottom: 0;
 }
 
 
@@ -8,11 +49,13 @@ body {
     color: white;
     border-radius: 5px;
     width: 120px;
-    /* width: 58%; */
     aspect-ratio: 3/1;
     font-size: 16px;
     border: none;
     margin-inline:2%;
+
+     flex: 1 1 48%;
+      transition: all 0.5s ease;
 
 }
 
@@ -31,11 +74,13 @@ body {
     color: var(--primary-light-blue);
     border-radius: 5px;
     width: 120px;
-    font-size: 16px;
-
     aspect-ratio: 3/1;
+    font-size: 16px;
     border: 2px solid var(--primary-light-blue);
     margin-inline:2%;
+    
+     flex: 1 1 48%;
+      transition: all 0.5s ease;
 }
 
 .resume_button:hover{
@@ -49,7 +94,8 @@ body {
 .div_buttons{
     margin-top: 20px;
     display: flex;
-    justify-content: space-evenly;
+    /* flex-direction: row; */ /* <-- not needed, but left here to clarity... for now*/
+    
 }
 
 nav {
@@ -92,16 +138,15 @@ nav logo {
 .div_me {
     display: flex;
     justify-content: center;
-    padding-inline: 5%;
+    /* padding-inline: 1%; */
 }
 .div_pic{
-    margin-right: 5%;
+    margin-right: 4%;
 }
 .div_pic img {
     /* position: absolute; */
     width: min(350px, 40vw);
     height: auto;
-    /* height: min(350px, 40vw); */
     border-radius: 50%;
     border: 3px solid white;
     margin-top: -50%;
@@ -112,7 +157,7 @@ nav logo {
 
 .div_content{
     justify-items: center;
-    margin-left: 5%;
+    margin-left: 4%;
 }
 
 .title_text {
@@ -121,7 +166,7 @@ nav logo {
     font-size: var(--step--1);
     font-weight: 500;
     font-style: italic;
-    color: #565b61;
+    color: #464a4f;
 }
  
 
@@ -137,7 +182,7 @@ nav logo {
 
 .title_home {
     margin: 0;
-    margin-top: 80px;
+    margin-top: 40px;
     color: #1b4571;
     font-weight: 500;
     font-size: var(--step-3);
@@ -151,48 +196,45 @@ nav logo {
 
 .body_content{
     display: block;
-    margin-inline: auto;
     justify-self: center;
+
     width: 90%;
     height: fit-content;
-    max-width: 1000px;
-}
-
-.cardviewTan {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-block: 5%;
-    padding-inline: 10%;
-
+    max-width: 1200px;
 }
 
 .cardviewWhite {
     display: flex;
+    flex-direction: row-reverse;
     align-items: center;
-    justify-content: center;
+    justify-self: center;
+    width: inherit;
     padding-block: 5%;
     padding-inline: 10%;
-    background-color: #E4DEDC;
-    /*Tan*/
-}
-
-/*text on right - image on left*/
-.text_on_left {
-    /* margin-right: 5%; */
     font-size: var(--step-0);
     text-align: center;
+
 }
 
-/*text on left - image on right*/
-.text_on_right {
-    /* margin-right: 5%; */
+.cardviewTan {
+    display: flex;    
+    align-items: center;
+    justify-self: center;
+    justify-content: space-evenly;
+    width: 90%;
+    padding-block: 5%;
+    padding-inline: 10%;
+    /* background-color: #E4DEDC; */
+    /* background-color: #b5cbd3; */
+    text-align: center; 
     font-size: var(--step-0);
-    text-align: center;
+
 }
 
-img.image {
-    width: min(350px, 40vw);
+.image {
+    
+     width: 300px;
+    /* width: min(350px, 40vw); */
     height: auto;
     border-radius: 5%;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -224,12 +266,49 @@ img.image {
     }
 }
 
+.name{
+    font-size: 40px;
+     color: white; 
+     margin-top: -60px; 
+     text-shadow: 4px 4px rgba(30, 30, 30, 0.829);
+}
+
 /* Mobile view */
 @media(max-width: 600px) {
 
-    .div_content {
-        margin: 0;
+    .line_combo{
+        display: none;
     }
+
+    .name{
+        font-size: 22px;
+     margin-top: -40px; 
+     text-shadow: 2px 2px rgba(30, 30, 30, 0.829);
+    }
+    
+.divider_big {
+    width: 90%;
+    margin-top: 40px;
+}
+
+    .div_buttons{
+        flex-direction: column;
+        gap: 10px;
+
+    }
+
+    
+.resume_button{
+    width: 100px;
+flex: 1 1 100%;
+}
+
+.contact_button{
+    width: 100px;
+    flex: 1 1 100%;
+}
+
+  
 
     .title_text {
         display: none;
@@ -249,55 +328,46 @@ img.image {
     .title_me p {
         text-align: center;
     }
+.div_me {
+    justify-content: space-evenly;
+    padding-inline: 0;
+    /* transition: 3s;*/
+}
 
-    .div_me {
-        flex-direction: column;
-        align-items: center;
-        padding-inline: 0;
-        }
-        
-        .div_pic {
-            margin-right: 0;
-        }
-        
-        .div_pic img {
-            width: 260px;
-            height: 260px;
-            margin-inline: 0%;
-            margin-top: -125px;
-        
-        }
+.div_pic {
+    margin-right: 0;
+}
 
-    .cardviewTan {
-        flex-direction: column;
-        padding: 10%;
-    }
+.div_pic img {
+    width: 240px;
+    height: auto;
+    margin-inline: 0%;
+    margin-top: -125px;
 
-    .cardviewWhite {
-        flex-direction: column-reverse;
-        /* image on top, text on bottom */
-        padding: 10%;
-    }
+}
 
-    img.image {
-        width: 100%;
-        border-radius: 5%;
-    }
+.cardviewWhite {
+    flex-direction: column-reverse;
+    padding: 10%;
+}
 
-    /* .text_on_right{
-        margin-inline: 5%;
-    }
-    
-    .text_on_left{
-        margin-inline: 5%; 
-    } */
+.cardviewTan{
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 10%;
+}
 
-    .text_on_right p {
-        font-size: var(--step-1);
-    }
+.cardviewWhite p{
+    font-size: 20px;
+}
 
-    .text_on_left p {
-        font-size: var(--step-1);
-    }
+.cardviewTan p{
+    font-size: 20px;
+}
+
+img.image {
+    width: 100%;
+    border-radius: 5%;
+}
 
 }
