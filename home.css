@@ -299,22 +299,12 @@ nav logo {
         margin-left: 0;
     }
 
-    /* .line_combo{
-        display: none;
-    } */
-    /* .cardviewWhite p{
-    background: white;
-}
-
-.cardviewTan p{
-    
-    background: white;
-} */
     .custom_divider {
-
+        
         position: relative;
-        width: 400px !important;
         rotate: 90deg;
+        width: 350px !important;
+        margin-top: -30px;
         z-index: -1;
     }
 
