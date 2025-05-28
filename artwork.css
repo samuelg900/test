@@ -1,27 +1,17 @@
 body {
   background-color: #F3FBFF;
-  /* background-image: linear-gradient(tan, rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)); */
-  /* background-image: linear-gradient(rgb(4, 40, 103), rgb(255, 255, 255), rgb(255, 255, 255), rgb(255, 255, 255)); */
-  /* background-image: linear-gradient(rgb(120, 155, 216), rgb(227, 227, 119)); */
-  /* font-family: 'Roboto', sans-serif; */
-  /* min-height: 1000px; */
-  /* height: 1900px; */
-  /* font-family: Garamond, serif; */
-
-  /* font-family: "Brush Script MT", cursive; */
 
 }
 
 .title {
   margin: 0;
-  /* padding-top: 100px; */
-  font-size: 86px;
-  /* font-size: 600%; */
+  font-size: 76px;
   color: #21306d;
   margin-inline: 10px;
+
+  font-family: "Rubik Dirt", sans-serif;
+  font-weight: 500;
   
-  
-  /* justify-self: center; */
 }
 
 .sub_title {
@@ -95,6 +85,7 @@ nav logo {
   position: relative;
   overflow: hidden;
   transition: 0.8s ease-out;
+  cursor: pointer;
 }
 
 .slider-img.active {
