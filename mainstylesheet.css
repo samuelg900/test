@@ -2,7 +2,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
 body {
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: 'Questrial', sans-serif;
     margin: 0;
     min-width: 400px;
     width: 100%;
@@ -55,7 +56,7 @@ nav {
     left: 0;
     right: 0;
     z-index: 100;
-    box-shadow: 1px 1px 10px rgba(119, 119, 119, 0.4);
+    box-shadow: 1px 1px 4px rgba(119, 119, 119, 0.4);
 }
 
 .nav-items {
@@ -113,6 +114,7 @@ nav.nav_appear {
 
 
 nav logo {
+    font-family: 'Roboto', sans-serif;
     margin-left: 20px;
     font-weight: bold;
     font-style: italic;
@@ -128,8 +130,9 @@ nav logo {
     min-width: 120px;
     border-radius: 0 0 0 5px;
     animation: kf_nav_expand 0.3s;
-    z-index: 99;
-    box-shadow: 0 1px 10px rgba(119, 119, 119, 0.4);
+    z-index: 199;
+    /* box-shadow: 0 1px 10px rgba(119, 119, 119, 0.4); */
+    box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.3);
     background-color: white;
 }
 
@@ -183,15 +186,15 @@ nav logo {
     width: 100%;
     border: none;
     border-top: 1px solid rgba(0, 0, 0, 0.5);
-    margin-block: 30px;
+    margin-block: 40px;
 }
 
 .divider_small {
     width: 40%;
     border: none;
     border-top: 2px dashed rgba(0, 0, 0, 0.2);
-    margin-top: 20px;
-    margin-bottom: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
 }
 
 
