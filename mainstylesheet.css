@@ -124,7 +124,7 @@ nav logo {
 .nav-dropdown {
     display: none;
     position: fixed;
-    top: 54px;
+    top: 52px;
     right: 0;
     float: right;
     min-width: 120px;
@@ -220,13 +220,6 @@ nav logo {
     font-size: 16px;
     transform: translateX(-50%);
 }
-
-
-/* Tablet view */
-/* @media (max-width: ???px) {
-
-} */
-
 
 /* Mobile view */
 @media (max-width: 600px) {
