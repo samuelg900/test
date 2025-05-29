@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="mainstylesheet.css">
+<link rel="stylesheet" href="skills.css">
+<title>Skills</title>
+</head>
+<body>
+
+<!-- Top nav -->
+ <nav id="navbar" class="nav_appear">
+    <logo>LSM</logo>
+    <div class="nav-items">
+        <a href="home.html">HOME</a>
+        <a class="active" href="skills.html">SKILLS</a>
+        <a href="artwork.html">ART</a>
+        <a href="about.html">ABOUT</a>
+
+        <span class="material-symbols-outlined" onclick="toggleMenu()">menu</span>
+    </div>
+</nav>
+
+  <div class="body_content">
+
+
+  <script src="webfunctions.js"></script>
+
+<div id="dropdownID" class="nav-dropdown">
+    <a href="home.html">HOME</a>
+    <a class="active" href="skills.html">SKILLS</a>
+    <a href="artwork.html">ART</a>
+    <a href="about.html">ABOUT</a>
+</div>
+
+<script>    
+    function toggleMenu() {
+    let menu = document.getElementById("dropdownID");
+      if (menu.style.display === "block") {
+        menu.style.display = "none";
+      } else {
+        menu.style.display = "block";
+      }
+  
+    }
+    
+//makes the dropdown menu disappear when screen resizes
+window.addEventListener('resize', () => {
+    if(document.getElementById("dropdownID").style.display==='block')
+        document.getElementById("dropdownID").style.display = 'none';
+});
+
+window.addEventListener('scroll', () => {
+    if(document.getElementById("dropdownID").style.display==='block')
+        document.getElementById("dropdownID").style.display = 'none';
+});
+
+</script>
+
+<h1>Let's play some 2D pong</h1>
+
+<canvas class="gameboard" id="gameboard" width="2400px", height="1600px" style="border:1px solid red;"></canvas>
+<script src="pong.js"></script>
+
+<div class="body_titles">
+    <p>Projects</p>
+</div>
+
+<div class="div_projects">
+    <div class="image_div">
+        <img class="body_images" src="skills_images/website.png" alt="placeholder" >
+        <p>This website for one</p>
+    </div>
+
+    <div class="image_div">
+        <!-- Will go to link to app when available -->
+        <img class="body_imagesIcon" src="skills_images/Xplore Logo.png" alt="placeholder" >
+        <p><a class="links" href="404.html">My Xplore App (still in development)</a></p>
+    </div>
+
+    <div class="image_div">
+        <img class="body_images" src="skills_images/Albacore Poster.jpg" alt="placeholder" >
+        <p><a class="links" onclick="window.open('skills_images/Albacore_Poster.pdf', '_blank')">Albacore 2.0: A Virtual Experience</a></p>
+    </div>
+</div>
+
+<div class="body_titles">
+    <p>Blender Models</p>
+</div>
+
+<div class="div_projects">
+    <div class="image_div">
+        <img class="body_images" src="skills_images/donuts_blender.png" alt="placeholder" >
+        <p>Donut scene from a 5-ish hour Blender tutorial</p>
+    </div>
+
+    <div class="image_div">
+        <img class="body_images" src="skills_images/placeholder.png" alt="placeholder" >
+    </div>
+
+    <div class="image_div">
+        <img class="body_images" src="skills_images/placeholder.png" alt="placeholder" >
+    </div>
+</div>
+
+
+<div class="body_titles">
+    <p>Languages</p>
+</div>
+
+<div id="languages" class="languages">
+    <div><img title="C" class="lang_circles" src="skills_images/languages/C.png" alt="placeholder" ></div>
+    <div><img title="C Sharp" class="lang_circles" src="skills_images/languages/C_sharp.png" alt="placeholder" ></div>
+    <div><img title="C++" class="lang_circles" src="skills_images/languages/C++.png" alt="placeholder" ></div>
+    <div><img title="Java" class="lang_circles" src="skills_images/languages/Java.png" alt="placeholder" ></div>
+    <div><img title="Python" class="lang_circles" src="skills_images/languages/Python.png" alt="placeholder" ></div>
+    <div><img title="HTML" class="lang_circles" src="skills_images/languages/HTML5.png" alt="placeholder" ></div>
+    <div><img title="CSS" class="lang_circles" src="skills_images/languages/CSS.png" alt="placeholder" ></div>
+    <div><img title="JavaScript" class="lang_circles" src="skills_images/languages/JavaScript.png" alt="placeholder" ></div>
+    <div><img title="SQL" class="lang_circles" src="skills_images/languages/SQL.png" alt="placeholder" ></div>
+</div>
+
+</div>
+
+<div class="footer">
+    <div class="footer_content">
+        <p title="Does nothing - just for show">Privacy</p>
+        <p title="Does nothing - just for show">Terms</p>
+        <p title="Does nothing - just for show">Feedback</p>
+        <p title="Does nothing - just for show">Careers</p>    
+    </div>
+    <p class="copyright" title="That's me!">© 2025 Luis S. Morel</p>
+</div>
+
+</body>
+</html>

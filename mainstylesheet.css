@@ -103,10 +103,10 @@ nav a.active {
     font-weight: 600;
 }
 
-/* nav a:hover {
+nav a:hover {
     transition: 0.3s;
     transform: scale(1.15);
-} */
+}
 
 nav.nav_disappear {
   animation: nav_go_away 0.8s forwards;

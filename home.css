@@ -116,10 +116,6 @@ nav a.active {
     color: var(--primary-light-blue);
 }
 
-nav a:hover {
-    background-color: var(--lighter-blue);
-}
-
 nav logo {
     color: var(--primary-dark-grey);
 }
