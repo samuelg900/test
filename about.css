@@ -6,6 +6,10 @@ nav {
   background-color: white;
 }
 
+nav a.active {
+    color: var(--primary-light-blue);
+}
+
 .body_content{
     display: block;
     justify-self: center;

@@ -36,6 +36,7 @@ body {
     --primary-light-grey: #cacaca;
     --primary-dark-blue: #1b4571;
     --primary-light-blue: rgb(72, 133, 209);
+    --primary-orange: rgb(198, 111, 5);
     --lighter-blue: #8ab8e9;
 }
 
@@ -205,7 +206,8 @@ nav logo {
     font-weight: 600;
 }
 
-.material-symbols-outlined {
+
+.menu_icon {
     display: none;
 }
 
@@ -256,7 +258,7 @@ nav logo {
         display: none;
     }
 
-    .material-symbols-outlined {
+    .menu_icon {
         font-size: var(--menu-text-size);
         display: block;
         margin-right: 10px;
