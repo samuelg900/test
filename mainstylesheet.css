@@ -148,6 +148,18 @@ nav logo {
     font-size: var(--logo-size);
 }
 
+nav logo:hover {
+    
+    animation: fill_logo 1.3s forwards;
+}
+
+@keyframes fill_logo {
+
+    100% {
+        color: var(--primary-light-blue);
+    }
+}
+
 .nav-dropdown {
     display: none;
     position: fixed;

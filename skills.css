@@ -15,6 +15,13 @@ nav a {
     color: white;
 }
 
+@keyframes fill_logo {
+
+    100% {
+        color: var(--primary-orange);
+    }
+}
+
 
 nav a.active {
     /* color: white; */
