@@ -36,7 +36,7 @@ body {
     --primary-light-grey: #cacaca;
     --primary-dark-blue: #1b4571;
     --primary-light-blue: rgb(72, 133, 209);
-    --primary-orange: rgb(198, 111, 5);
+    --primary-orange: rgb(217, 147, 61);
     --lighter-blue: #8ab8e9;
 }
 
@@ -150,7 +150,7 @@ nav logo {
 
 nav logo:hover {
     
-    animation: fill_logo 1.3s forwards;
+    animation: fill_logo 1s forwards;
 }
 
 @keyframes fill_logo {

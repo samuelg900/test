@@ -14,7 +14,7 @@
 <body>
 
     <!-- Top nav -->
-    <nav id="navbar" class="nav_appear">
+    <nav id="navbar">
         <logo onclick="window.location.href='home.html'" style="cursor: pointer;">LSM</logo>
         <div class="nav-items">
             <a href="home.html">HOME</a>
@@ -61,12 +61,6 @@
             });
 
         </script>
-
-        <h1>Let's play some 2D pong</h1>
-
-        <canvas class="gameboard" id="gameboard" width="2400px" , height="1600px"
-            style="border:1px solid red;"></canvas>
-        <script src="pong.js"></script>
 
         <div class="body_titles">
             <p>Projects</p>
@@ -130,28 +124,55 @@
 
             <div class="image_div">
                 <img class="body_imagesIcon" src="skills_images/Xplore Logo.png">
-                <p><a class="links" href="404.html">My Xplore App (still in development)</a></p>
+                <p>Currently in development is a mobile travel application which aims to reduce the stress of planning itineraries
+                 and simplify the process of organizing travel plans. I will update information on this application as development continues.</p>
             </div>
         </div>
 
         <div class="body_titles">
-            <p>Blender Models</p>
+            <p>Some Other Things</p>
         </div>
 
         <div class="div_projects">
             <div class="image_div">
-                <img class="body_images" src="skills_images/donuts_blender.png" alt="placeholder">
-                <p>Donut scene from a 5-ish hour Blender tutorial</p>
+                <video src="skills_images/donuts.mp4" muted loop playsinline></video>
+                <p>This donuts rendering scene was created using a 5-hour <a class="links" href=”https://youtu.be/4haAdmHqGOw”>blender tutorial</a>
+                    by Blender Guru. The course goes over modeling techniques, texturing, lighting, rendering
+                    and more. In the near future I hope to expand my 3D portfolio with custom made models of objects and people</p>
             </div>
 
             <div class="image_div">
-                <img class="body_images" src="skills_images/placeholder.png" alt="placeholder">
+                <img class="body_images" src="skills_images/alicia.jpg"
+                    onclick="openImageViewer('skills_images/alicia.jpg')">
+                <p>I draw and paint sometimes. Check out more of my work <a class="links" href="artwork.html">here</a>.
+                </p>
             </div>
 
-            <div class="image_div">
+            <div class="image_div" style="grid-column: 1 / 3;">
                 <img class="body_images" src="skills_images/placeholder.png" alt="placeholder">
             </div>
         </div>
+
+        <script>
+            const video = document.querySelector("video");
+            video.currentTime = 6;
+
+
+            video.addEventListener("mouseenter", () => {
+                video.currentTime = 0;
+                //   video.play();
+                video.play().catch(err => {
+                    if (err.name !== "AbortError") {
+                        console.error("Video play error:", err);
+                    }
+                });
+            });
+
+            video.addEventListener("mouseleave", () => {
+                video.pause();
+                video.currentTime = 6;
+            });
+        </script>
 
 
         <div class="body_titles">
@@ -174,6 +195,13 @@
         </div>
 
     </div>
+
+    <div class="body_titles">
+        <p>Let's play some 2D pong</p>
+    </div>
+
+    <canvas class="gameboard" id="gameboard" width="2400px" , height="1600px" style="border:1px solid red;"></canvas>
+    <script src="pong.js"></script>
 
     <div class="footer">
         <div class="footer_content">

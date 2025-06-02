@@ -233,21 +233,15 @@ and show it as like 2:1 (LxW) but for mobile do like 1:1 aspect ratio*/
 
 .overlay {
   display: flex;
-  justify-content: center;
   align-items: center;
-  justify-self: center;
-  align-self: center;
-  /* border-radius: 4px; */
+  text-align: center;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: .5s ease;
-  /* background-color: #6c5f5f; */
   background-color: rgb(57, 57, 57);
-  text-align: center;
   font-size: 16px;
 }
 

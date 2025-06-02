@@ -206,9 +206,9 @@ canvas.addEventListener('click', (event) => {
     const mouseX = event.offsetX;
     const mouseY = event.offsetY;
     
-    console.log("mouseX: " + mouseX + "  mouseY: "+ mouseY);
+    // console.log("mouseX: " + mouseX + "  mouseY: "+ mouseY);
     
-    console.log("mouseX: " + mouseX + "  mouseY: "+ mouseY);
+    // console.log("mouseX: " + mouseX + "  mouseY: "+ mouseY);
 
     if(!Game.isGameRunning && (isBackButtonPressed(mouseX, mouseY))){
         Game.reset();
@@ -216,7 +216,7 @@ canvas.addEventListener('click', (event) => {
         drawMenu();
     }
     else if(Game.pickingPaddle){
-        console.log("mouseX: " + mouseX + "  mouseY: "+ mouseY)
+        // console.log("mouseX: " + mouseX + "  mouseY: "+ mouseY)
         if(mouseX <= canvas.width / 2){
             canvas.style.cursor = "default";
             Player.controllingPaddle = 1;
@@ -503,7 +503,7 @@ function startCountdown() {
            
     timer = setInterval(() => {
         // countdown--;
-        console.log("countdown: " + countdown);
+        // console.log("countdown: " + countdown);
         drawTimer();
     
         if(countdown-- <= 0){
@@ -612,7 +612,8 @@ function animate() {
 
 window.addEventListener("resize", function () {
 
-   
+   //TODO: check if game is running, if not, then just return
+   //Do this for other listeners as well 
 
     if(Game.isGameRunning){
         let p1resizeW = (paddle1.location()[0] * 100) / canvas.width;
@@ -635,10 +636,10 @@ window.addEventListener("resize", function () {
         paddle2.updatePaddleLocation((p2resizeW/100) * canvas.width, (p2resizeH/100) * canvas.height);
     }
     
-    console.log("-------------------------");
-    console.log("canvas.width: " + canvas.width);
-    console.log("paddle2.x: " + paddle2.x);
-    console.log("paddleWidth: " + paddleWidth);
+    // console.log("-------------------------");
+    // console.log("canvas.width: " + canvas.width);
+    // console.log("paddle2.x: " + paddle2.x);
+    // console.log("paddleWidth: " + paddleWidth);
     
     //TODO: check what menu scene is on and resize accordingly
     switch(Game.currentScene){
