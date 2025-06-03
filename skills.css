@@ -195,8 +195,8 @@ nav a::after {
 
 .image_div img{
     width: 100%;
-    /* min-width: 40vw;
-    max-width: 600px; */
+    /* min-width: 40vw; */
+    max-width: 600px; 
     cursor: pointer;
     /* margin-bottom: 20px; */
     -webkit-box-shadow: 0 0 10px rgba(134, 134, 134, 0.39);
