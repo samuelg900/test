@@ -19,6 +19,30 @@ nav a.active {
     max-width: 1200px;
 }
 
+.body_titles {
+    text-align: center;
+    font-size: var(--step-3);
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+/* .gameboard{
+    display: block;
+    
+    margin: auto;
+    height: 100%;
+    width: 80%;
+    max-width: 900px;
+} */
+
+.gameboard {
+    display: block;
+    align-items: center;
+    width: 100%;
+    /* height: 100%;
+    max-width: 900px; */
+}
+
 .footer {
   /* background-color: rgb(191, 165, 130); */
   background-color: #243848;
