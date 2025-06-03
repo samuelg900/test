@@ -70,7 +70,7 @@
             <p>Projects</p>
         </div>
 
-        <div class="image_viewer_window" id="image_viewer_window">
+        <!-- <div class="image_viewer_window" id="image_viewer_window">
             <img class="image_viewer" src="">
             <div class="image_icon_container">
                 <span id="share" class="material-symbols-outlined file_icon">file_open</span>
@@ -109,14 +109,15 @@
                     }
                 }
             });
-        </script>
+        </script> -->
 
+        <div class="main_container">
 
         <div class="body_container">
-            <div class="image_div" data-aos="fade-right">
+            <div class="image_div" data-aos="fade-up">
                 <img src="skills_images/website.png">
             </div>
-            <div data-aos="fade-left">
+            <div class="image_div" data-aos="fade-up">
                 <h1>The Website</h1>
                 <p class="body_text">This is filler text. A selection of things I've built, contributed to, or am
                     actively
@@ -129,16 +130,11 @@
 
         </div>
 
-
-        <hr class="divider_small">
-
         <div class="body_container" style="flex-direction: row-reverse;">
-            <div id="aos_image_id" class="image_div" data-aos="fade-left">
-                <img src="skills_images/Albacore Poster.jpg"
-                    onclick="openImageViewer('skills_images/Albacore Poster.jpg')" style="cursor: pointer;">
+            <div class="image_div" data-aos="fade-up">
+                <img src="skills_images/Albacore Poster.jpg" style="cursor: pointer;">
             </div>
-            <div id="aos_text_id" data-aos="fade-right">
-                <!-- <img class="body_images" src="skills_images/Albacore Poster.jpg" onclick="window.open('skills_images/Albacore_Poster.pdf', '_blank')" style="cursor: pointer;"> -->
+            <div class="image_div" data-aos="fade-up">
                 <h1>Albacore 2.0: A Virtual Experience</h1>
                 <p class="body_text">Worked with a team in an Agile environment. We worked in sprints and documented our
                     progress and tasks on an issue board along the way</p>
@@ -147,67 +143,33 @@
             </div>
         </div>
 
-        <script>
-
-            function updateAOS() {
-                   if(window.innerWidth <= 600){
-                console.log("hello");
-                const aosImage = document.getElementById("aos_image_id");
-                const aosText = document.getElementById("aos_text_id");
-
-                // Reset AOS attributes
-                aosImage.removeAttribute("data-aos");
-                aosText.removeAttribute("data-aos");
-
-                
-                // Set AOS attributes again
-                aosImage.setAttribute("data-aos", "fade-right");
-                aosText.setAttribute("data-aos", "fade-left");
-                
-                console.log("out");
-                }
-
-            }
-            
-            window.addEventListener('load', () => { updateAOS(); });
-
-            window.addEventListener('resize', () => { updateAOS(); });
-
-            </script>
-
-
-        <hr class="divider_small">
-
         <div class="body_container">
-            <div class="image_div" data-aos="fade-right">
-                <img class="body_imagesIcon" src="skills_images/Xplore Logo.png">
+            <div class="image_div" data-aos="fade-up">
+                <img style="border-radius: 25%;" src="skills_images/Xplore Logo.png">
             </div>
-            <div data-aos="fade-left">
+            <div class="image_div" data-aos="fade-up">
                 <h1>Xplore App</h1>
                 <p class="body_text">Currently in development is a mobile travel application which aims to reduce the
-                    stress of planning
-                    itineraries
-                    and simplify the process of organizing travel plans. I will update information on this application
-                    as
-                    development continues</p>
+                    stress of planning itineraries and simplify the process of organizing travel plans. I will update information on this application
+                    as development continues</p>
             </div>
         </div>
 
-        <hr class="divider_big">
+        </div>
 
         <div class="body_titles">
             <p>Some Other Things</p>
         </div>
 
         <div class="body_container_more">
-            <div>
-                <div class="image_div">
+            <div class="item">
+                <div >
                     <video src="skills_images/donuts.mp4" muted loop playsinline></video>
                 </div>
                 <div>
                     <h1>Blender</h1>
                     <p class="body_text">This donuts rendering scene was created using a 5-hour <a class="links"
-                            href=”https://youtu.be/4haAdmHqGOw”>blender tutorial</a>
+                            href="https://youtu.be/4haAdmHqGOw">blender tutorial</a>
                         by Blender Guru. The course goes over modeling techniques, texturing, lighting, rendering
                         and more. In the near future I hope to expand my 3D portfolio with custom made models of objects and
                         people</p>
@@ -216,11 +178,10 @@
         <!-- </div>
 
         <div class="body_container_more"> -->
-            <hr class="divider_small">
-            <div>
-                <div class="image_div">
-                    <img style="border-radius: 20px; cursor: default;" src="skills_images/alicia.jpg"
-                        onclick="openImageViewer('skills_images/alicia.jpg')">
+            <!-- <hr class="divider_small"> -->
+            <div class="item">
+                <div>
+                    <img style="border-radius: 20px; cursor: default;" src="skills_images/alicia.jpg">
                 </div>
         
                 <div>
