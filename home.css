@@ -105,10 +105,6 @@ body {
 
 }
 
-nav {
-    background: white;
-}
-
 .nav-items {
     display: flex;
 }

@@ -66,6 +66,7 @@ nav {
     right: 0;
     z-index: 100;
     box-shadow: 1px 1px 4px rgba(119, 119, 119, 0.4);
+    background: white;
 }
 
 .nav-items {

@@ -8,21 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="mainstylesheet.css">
     <link rel="stylesheet" href="home.css">
+    <link rel="icon" type="image/png" href="xp_round_icon.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-
-    <!-- TODO: for website tab icon -->
-  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
-   <!-- <link rel="icon" type="image/png" href="image/favicon.png"> -->
 
     <title>Home</title>
 </head>
 
 <body>
-    
+
 
     <nav id="navbar">
-    <logo onclick="window.location.href='home.html'" style="cursor: pointer;">LSM</logo>
+        <logo onclick="window.location.href='home.html'" style="cursor: pointer;">LSM</logo>
         <div class="nav-items">
             <a class="active" href="home.html">HOME</a>
             <a href="skills.html">SKILLS</a>
@@ -94,22 +91,26 @@
 
     <!-- Ideas for website design -->
     <!-- https://dribbble.com/tags/profile-page# -->
-     <!-- https://able.co/work -->
+    <!-- https://able.co/work -->
 
     <div class="body_content">
 
-</style>
+        </style>
         <hr class="divider_big">
         <p class="title_home">About Me</p>
 
         <p class="about_me_text"> My name is Luis Morel, a recent Computer Science graduate with a military background.
-        I've created this site to showcase a bit of my coding projects, skills, interests and everything in between. My background
-        includes programming in C++, Java, JavaScript, SQL and <a class="links" href="skills.html#languages">more</a>. I have
-        worked on software for a variety of platforms to include virtual reality devices, mobile phones, and desktop computers.</p>
+            I've created this site to showcase a bit of my coding projects, skills, interests and everything in between.
+            My background
+            includes programming in C++, Java, JavaScript, SQL and <a class="links"
+                href="skills.html#languages">more</a>. I have
+            worked on software for a variety of platforms to include virtual reality devices, mobile phones, and desktop
+            computers.</p>
 
-        <p class="about_me_text">Feel free to explore my site to learn a bit more about me and what I've accomplished 
-        through my projects, artwork, and the tools I've used to bring them to life. I'm always looking for opportunities 
-        to further grow and elevate not only myself but those I work with; let's build together.</p>
+        <p class="about_me_text">Feel free to explore my site to learn a bit more about me and what I've accomplished
+            through my projects, artwork, and the tools I've used to bring them to life. I'm always looking for
+            opportunities
+            to further grow and elevate not only myself but those I work with; let's build together.</p>
 
         <hr class="divider_big">
 
@@ -172,7 +173,7 @@
     </div>
 
     <script>
-        
+
         function updateLines() {
             const combos = document.querySelectorAll(".line_combo");
 
@@ -193,7 +194,7 @@
                 leftLine.style.left = `${line.getBoundingClientRect().x}px`;
 
             });
-         
+
         }
 
         window.addEventListener('resize', updateLines);
@@ -215,8 +216,9 @@
     <script>
         AOS.init({
             duration: 1000,
-        // });
-          once: true,});
+            // });
+            once: true,
+        });
     </script>
 
 </body>

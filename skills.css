@@ -6,7 +6,7 @@ body {
 }
 
 nav {
-    background-color: rgb(15, 15, 15);
+    background-color: rgb(30, 30, 30);
 }
 
 nav a {
@@ -112,6 +112,8 @@ h1 {
     width: 90%;
     height: fit-content;
     max-width: 1200px;
+    margin-inline: 30px;
+
 }
 
 
@@ -166,7 +168,7 @@ nav a::after {
     align-items: center;
     justify-content: center;
     width: 100%;
-    gap: 100px;
+    gap: 150px;
 }
 
 
@@ -231,7 +233,7 @@ nav a::after {
 
 
 .body_text {
-    font-size: 18px !important;
+    font-size: 20px !important;
     margin: 0;
     margin-block: 20px;
     line-height: 1.4;
@@ -295,6 +297,17 @@ nav a::after {
 
 /* Mobile view */
 @media (max-width: 600px) {
+
+    .body_text {
+    font-size: 18px;
+    margin: 0;
+    margin-block: 20px;
+    line-height: 1.4;
+}
+
+    .main_container {
+    gap: 100px;
+    }
 
     .body_container_more {
         flex-direction: column;
