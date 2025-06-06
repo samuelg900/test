@@ -214,8 +214,8 @@ nav a::after {
     width: 100%;
     max-width: 700px;
     cursor: pointer;
-    -webkit-box-shadow: 0 0 10px rgba(134, 134, 134, 0.39);
-    box-shadow: 0 0 10px rgba(134, 134, 134, 0.39);
+    /* -webkit-box-shadow: 0 0 10px rgba(134, 134, 134, 0.39);
+    box-shadow: 0 0 10px rgba(134, 134, 134, 0.39); */
 }
 
 /* .image_div img:hover {
@@ -244,6 +244,9 @@ nav a::after {
     font-size: var(--step-4);
     margin-top: 120px;
     margin-bottom: 90px;
+    font-family: "Pacifico", cursive;  
+    font-weight: 400; 
+    font-style: normal;
 }
 
 .body_titles p {
